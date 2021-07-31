@@ -42,6 +42,10 @@ features                                  :
     description                           : Quickly filter and search your recipes for easy access.
     fontawesome_icon_name                 : search
 
+  - title                                 : Folders
+    description                           : Organize your recipes into folders
+    fontawesome_icon_name                 : folder
+
   - title                                 : Save From The Web
     description                           : Easily save recipes from your favorite websites using he built in app extension.
     fontawesome_icon_name                 : save
@@ -53,6 +57,14 @@ features                                  :
   - title                                 : Edit
     description                           : Needs a little more salt? Easily edit your saved recipes to match your preferences.
     fontawesome_icon_name                 : edit
+  
+  - title                                 : Grocery Lists
+    description                           : Easily save your recipe ingredients to your Reminders app grocery list.
+    fontawesome_icon_name                 : "list-ul"
+  
+  - title                                 : Sharing
+    description                           : Share your recipes with friends! Either send them a sauce file or the recipe url
+    fontawesome_icon_name                 : share
 
 # Theme Settings
 topbar_color                              : "#000000"
