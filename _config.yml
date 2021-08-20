@@ -66,6 +66,10 @@ features                                  :
     description                           : Share your recipes with friends! Either send them a sauce file or the recipe url
     fontawesome_icon_name                 : share
 
+  - title                                 : iCloud Sync
+    description                           : Keep all of your recipes backed up and available on all your devices!
+    fontawesome_icon_name                 : cloud
+
 # Theme Settings
 topbar_color                              : "#000000"
 topbar_transparency                       : 0.1

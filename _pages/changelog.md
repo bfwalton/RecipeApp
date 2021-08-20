@@ -18,3 +18,10 @@ Initial release of Saucier! Stay tuned for more features coming soon!
 - Added setting to confirm before deletion
 - Added feature to automatically detect url in your pasteboard for easier saving of recipes
 - Added ability to add ingredients to your reminders Reminders app grocery list
+
+### `UI updates and added iCloud Sync`
+# **Version 1.3**
+- Added iCloud sync!
+- Added an instruction by instruction recipe mode
+- UI Updates to improve user experiance
+- New ways to share your recipes!
