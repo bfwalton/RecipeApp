@@ -24,7 +24,11 @@ Initial release of Saucier! Stay tuned for more features coming soon!
 - Added iCloud sync!
 - UI Updates to improve user experiance
 
-### `More Enhancements (Coming Soon)`
-# **Version 1.3.1**
-- Added an instruction by instruction recipe mode (Coming Soon)
-- New ways to share your recipes! (Coming Soon)
+### `Our biggest release yet!`
+# **Version 1.4**
+- Total group up rewrite of the Sauicer UI
+- Drastically improved URL parser for most websites!
+- Improved recipe search
+- Improved performance
+- Widgets
+- Spotlight search
