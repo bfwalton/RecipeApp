@@ -1,2 +1,0 @@
-google.com, pub-1964292983165649, DIRECT, f08c47fec0942fa0
-mopub.com, 86f32caf1e8b467388112f0fde1dfe8a, DIRECT, 74b46c0ea83967ca
