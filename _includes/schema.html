@@ -1,0 +1,120 @@
+{%- comment -%}
+  Structured data.
+
+  Deliberately absent: `aggregateRating`. Google will happily render stars from
+  it and it is the one property here nobody can verify from the page, so it
+  stays out until there is a real review count to point at.
+
+  `page.faq` drives the FAQPage block, and is the same list the visible FAQ is
+  rendered from — so the markup and the page can never disagree.
+{%- endcomment -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": "{{ site.app_name }}",
+      "description": {{ site.description | strip_newlines | strip | jsonify }},
+      "inLanguage": "en-US",
+      "publisher": { "@id": "{{ site.url }}/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#person",
+      "name": {{ site.author | jsonify }},
+      "url": "{{ site.url }}/"
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "{{ site.url }}/#app",
+      "name": "{{ site.app_name }}",
+      "applicationCategory": "LifestyleApplication",
+      "applicationSubCategory": "Recipe Manager",
+      "operatingSystem": {{ site.requires_os | jsonify }},
+      "url": "{{ site.url }}/",
+      "downloadUrl": {{ site.appstore_link | jsonify }},
+      "installUrl": {{ site.appstore_link | jsonify }},
+      "image": "{{ site.app_icon | absolute_url }}",
+      "screenshot": [
+        "{{ '/assets/img/screens/hero.png' | absolute_url }}",
+        "{{ '/assets/img/screens/cards.png' | absolute_url }}",
+        "{{ '/assets/img/screens/cooking.png' | absolute_url }}"
+      ],
+      "description": {{ site.description | strip_newlines | strip | jsonify }},
+      "author": { "@id": "{{ site.url }}/#person" },
+      "publisher": { "@id": "{{ site.url }}/#person" },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "featureList": [
+        "Save recipes from any website with the share sheet",
+        "Save recipes from Instagram, TikTok and YouTube captions",
+        "Ask Saucier, an on-device Apple Intelligence cooking assistant",
+        "Hands-free voice questions while you cook",
+        "Step-by-step cook mode with background timers and Live Activities",
+        "Import from Paprika Recipe Manager",
+        "iCloud sync across iPhone and iPad",
+        "Shared recipes over iCloud",
+        "Home Screen widgets and Spotlight search",
+        "Send ingredients to the Reminders grocery list"
+      ]
+    }{% if page.url != "/" %},
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ page.url | absolute_url }}#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ site.url }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ page.title | jsonify }},
+          "item": "{{ page.url | absolute_url }}"
+        }
+      ]
+    }{% endif %}{% if page.faq %},
+    {
+      "@type": "FAQPage",
+      "@id": "{{ page.url | absolute_url }}#faq",
+      "mainEntity": [
+        {%- for item in page.faq %}
+        {
+          "@type": "Question",
+          "name": {{ item.q | jsonify }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ item.a | strip_newlines | strip | jsonify }}
+          }
+        }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+      ]
+    }{% endif %}{% if page.howto %},
+    {
+      "@type": "HowTo",
+      "@id": "{{ page.url | absolute_url }}#howto",
+      "name": {{ page.howto_name | default: page.title | jsonify }},
+      "step": [
+        {%- for step in page.howto %}
+        {
+          "@type": "HowToStep",
+          "position": {{ forloop.index }},
+          "name": {{ step.title | jsonify }},
+          "text": {{ step.text | strip_newlines | strip | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+      ]
+    }{% endif %}
+  ]
+}
+</script>

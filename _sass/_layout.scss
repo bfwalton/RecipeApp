@@ -1,0 +1,259 @@
+// Page scaffolding: container, header, sections, footer.
+
+.container {
+  width: 100%;
+  max-width: $container;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+.container--narrow { max-width: $measure + ($gutter * 2); }
+
+// Header ---------------------------------------------------------------------
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(248, 245, 240, 0.86);
+  backdrop-filter: saturate(1.6) blur(14px);
+  -webkit-backdrop-filter: saturate(1.6) blur(14px);
+  border-bottom: 1px solid $rule;
+}
+
+// On the dark hero the header sits on brand rather than on paper.
+.site-header--on-brand {
+  background: rgba(31, 74, 102, 0.82);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+
+  .site-header__name { color: #fff; }
+  .site-nav a { color: rgba(255, 255, 255, 0.84); }
+  .site-nav a:hover,
+  .site-nav a[aria-current="page"] { color: #fff; }
+  .nav-toggle { color: #fff; }
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: $space-16;
+  min-height: 60px;
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: $space-8;
+  text-decoration: none;
+  flex: 0 0 auto;
+  margin-right: auto;
+}
+
+.site-header__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: $space-8;
+  box-shadow: $shadow-tile;
+}
+
+.site-header__name {
+  font-family: $font-display;
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: $ink;
+  letter-spacing: -0.01em;
+}
+
+.site-nav ul {
+  display: flex;
+  align-items: center;
+  gap: $space-24;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav li { margin: 0; }
+
+.site-nav a {
+  font-size: 0.95rem;
+  color: $ink-muted;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] { color: $brand; }
+
+.site-header__cta {
+  flex: 0 0 auto;
+  padding: 9px $space-16;
+  font-size: 0.92rem;
+}
+
+// The menu is a checkbox toggle so the header needs no JavaScript at all.
+.nav-toggle,
+.nav-toggle-state { display: none; }
+
+@media (max-width: $bp-lg) {
+  // Reading order on a narrow header: brand · Menu · Get Saucier, with the
+  // menu panel wrapping onto its own row underneath.
+  .nav-toggle {
+    display: block;
+    order: 2;
+    background: none;
+    border: 0;
+    padding: $space-8;
+    margin: 0;
+    font: inherit;
+    font-size: 0.95rem;
+    color: $ink-muted;
+    cursor: pointer;
+  }
+
+  .site-nav {
+    order: 4;
+    flex-basis: 100%;
+    display: none;
+    padding-bottom: $space-16;
+  }
+
+  .nav-toggle-state:checked ~ .site-nav { display: block; }
+
+  .site-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $space-4;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: $space-8 0;
+    font-size: 1.05rem;
+  }
+
+  .site-header__inner { flex-wrap: wrap; }
+
+  .site-header__cta {
+    order: 3;
+    padding: 8px $space-16;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .site-header__name { font-size: 1.1rem; }
+  .nav-toggle { padding: $space-8 $space-4; }
+}
+
+// Sections -------------------------------------------------------------------
+.section {
+  padding: $space-96 0;
+
+  @media (max-width: $bp-md) { padding: $space-64 0; }
+}
+
+.section--tight { padding: $space-64 0; }
+
+.section--brand {
+  background: $brand;
+  color: #fff;
+
+  h1, h2, h3 { color: #fff; }
+  p { color: rgba(255, 255, 255, 0.82); }
+  a { color: #fff; }
+}
+
+.section--surface { background: $surface; }
+
+.section__lead {
+  max-width: 62ch;
+  font-size: 1.12rem;
+  color: $ink-muted;
+}
+
+.section--brand .section__lead { color: rgba(255, 255, 255, 0.8); }
+
+.eyebrow {
+  display: block;
+  font-family: $font-body;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $brand-soft;
+  margin-bottom: $space-8;
+}
+
+.section--brand .eyebrow { color: rgba(255, 255, 255, 0.72); }
+
+// Footer ---------------------------------------------------------------------
+.site-footer {
+  background: $brand-deep;
+  color: rgba(255, 255, 255, 0.76);
+  padding: $space-64 0 $space-32;
+  font-size: 0.95rem;
+
+  a {
+    color: rgba(255, 255, 255, 0.76);
+    text-decoration: none;
+  }
+
+  a:hover { color: #fff; text-decoration: underline; }
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: $space-48;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: $space-32;
+  }
+}
+
+.site-footer h2 {
+  font-family: $font-body;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: $space-16;
+}
+
+.site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer li { margin-bottom: $space-8; }
+
+.site-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: $space-8;
+  margin-bottom: $space-16;
+
+  img { width: 34px; height: 34px; border-radius: $space-8; }
+
+  span {
+    font-family: $font-display;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+}
+
+.site-footer__colophon {
+  margin-top: $space-48;
+  padding-top: $space-24;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-16;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.52);
+
+  p { margin: 0; }
+}

@@ -1,0 +1,434 @@
+// Reusable pieces: buttons, hero, device shots, feature rows, FAQ.
+
+// Buttons --------------------------------------------------------------------
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-8;
+  padding: 14px $space-24;
+  font-family: $font-body;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: $radius-pill;
+  cursor: pointer;
+  transition: transform 0.16s ease, background-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.btn:active { transform: scale(0.975); }
+
+.btn--primary {
+  background: $brand;
+  color: #fff;
+  box-shadow: $shadow-card;
+
+  &:hover { background: $brand-soft; color: #fff; }
+}
+
+.btn--on-brand {
+  background: #fff;
+  color: $brand;
+
+  &:hover { background: rgba(255, 255, 255, 0.9); color: $brand; }
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: $rule;
+  color: $ink;
+
+  &:hover { border-color: $brand; color: $brand; }
+}
+
+.section--brand .btn--ghost {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+
+  &:hover { border-color: #fff; background: rgba(255, 255, 255, 0.1); color: #fff; }
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-16;
+  margin-top: $space-32;
+}
+
+// Official App Store badge — Apple's artwork, so it keeps its own proportions.
+.appstore-badge img {
+  height: 54px;
+  width: auto;
+}
+
+// Hero -----------------------------------------------------------------------
+.hero {
+  background: $brand;
+  color: #fff;
+  padding: $space-64 0;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: $space-48;
+  align-items: center;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: 1fr;
+    gap: $space-32;
+    text-align: center;
+  }
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(2.4rem, 5.6vw, 4rem);
+  margin-bottom: $space-24;
+}
+
+.hero__lead {
+  font-size: 1.22rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.84);
+  max-width: 34em;
+
+  @media (max-width: $bp-lg) { margin-inline: auto; }
+}
+
+.hero .btn-row {
+  @media (max-width: $bp-lg) { justify-content: center; }
+}
+
+.hero__meta {
+  margin: $space-24 0 0;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.hero__shot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Device shot ----------------------------------------------------------------
+// A plain bezel rather than a photographic frame: it costs nothing to load and
+// cannot date the way a render of a specific handset does.
+.device {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  background: #111316;
+  border-radius: 46px;
+  box-shadow: $shadow-lift, 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+  img {
+    width: 100%;
+    border-radius: 36px;
+    display: block;
+  }
+}
+
+.device--sm { max-width: 240px; }
+
+// Feature rows ---------------------------------------------------------------
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-64;
+  align-items: center;
+
+  & + & { margin-top: $space-96; }
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: $space-32;
+
+    & + & { margin-top: $space-64; }
+  }
+}
+
+// Alternate which side the screenshot sits on, without reordering the DOM.
+.feature-row--flip .feature-row__media { order: -1; }
+
+@media (max-width: $bp-md) {
+  .feature-row--flip .feature-row__media { order: 0; }
+}
+
+.feature-row__media {
+  display: flex;
+  justify-content: center;
+}
+
+.feature-row h2 { margin-bottom: $space-16; }
+
+.feature-row p { color: $ink-muted; }
+
+.section--brand .feature-row p { color: rgba(255, 255, 255, 0.8); }
+
+// Feature grid ---------------------------------------------------------------
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: $space-24;
+  margin-top: $space-48;
+}
+
+.feature-card {
+  background: $surface;
+  padding: $space-24;
+  @include saucier-corners;
+  box-shadow: $shadow-card;
+
+  h3 {
+    font-size: 1.15rem;
+    margin-bottom: $space-8;
+  }
+
+  p {
+    margin: 0;
+    color: $ink-muted;
+    font-size: 0.98rem;
+  }
+}
+
+.feature-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: $space-16;
+  border-radius: $radius-compact;
+  background: rgba(31, 74, 102, 0.1);
+  color: $brand;
+
+  svg { width: 22px; height: 22px; }
+}
+
+// Stat / proof strip ---------------------------------------------------------
+.proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-16 $space-48;
+  padding: $space-24 0;
+  list-style: none;
+  margin: 0;
+
+  li {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: $space-8;
+    font-size: 0.98rem;
+    color: $ink-muted;
+  }
+
+  svg { width: 18px; height: 18px; color: $brand; flex: 0 0 auto; }
+}
+
+.section--brand .proof li { color: rgba(255, 255, 255, 0.8); }
+.section--brand .proof svg { color: rgba(255, 255, 255, 0.9); }
+
+// Steps ----------------------------------------------------------------------
+.steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: $space-48 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: $space-32;
+}
+
+.steps li {
+  counter-increment: step;
+  margin: 0;
+
+  h3 { margin-bottom: $space-8; font-size: 1.15rem; }
+  p { margin: 0; color: $ink-muted; }
+}
+
+.steps li::before {
+  content: counter(step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: $space-16;
+  border-radius: $radius-pill;
+  background: $brand;
+  color: #fff;
+  font-family: $font-display;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.section--brand .steps li::before { background: #fff; color: $brand; }
+.section--brand .steps li p { color: rgba(255, 255, 255, 0.8); }
+
+// Comparison table -----------------------------------------------------------
+.table-wrap {
+  overflow-x: auto;
+  margin: $space-32 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+  min-width: 520px;
+}
+
+th, td {
+  text-align: left;
+  padding: $space-16 $space-16;
+  border-bottom: 1px solid $rule;
+  vertical-align: top;
+}
+
+thead th {
+  font-family: $font-body;
+  font-size: 0.8rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $ink-muted;
+}
+
+tbody th {
+  font-weight: 550;
+  color: $ink;
+}
+
+// FAQ ------------------------------------------------------------------------
+.faq { margin-top: $space-48; }
+
+.faq details {
+  border-bottom: 1px solid $rule;
+  padding: $space-8 0;
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: $space-16 $space-32 $space-16 0;
+  position: relative;
+  font-family: $font-display;
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: $ink;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+  content: "";
+  position: absolute;
+  right: $space-8;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid $ink-faint;
+  border-bottom: 2px solid $ink-faint;
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+
+.faq__answer {
+  padding: 0 $space-32 $space-16 0;
+  color: $ink-muted;
+
+  p:last-child { margin-bottom: 0; }
+}
+
+// Callout --------------------------------------------------------------------
+.callout {
+  background: $surface;
+  padding: $space-32;
+  @include saucier-corners;
+  box-shadow: $shadow-card;
+  margin: $space-32 0;
+
+  h3 { margin-bottom: $space-8; }
+  p:last-child { margin-bottom: 0; }
+}
+
+// Final call to action -------------------------------------------------------
+.cta {
+  text-align: center;
+
+  h2 { margin-bottom: $space-16; }
+
+  p {
+    max-width: 48ch;
+    margin-inline: auto;
+    font-size: 1.1rem;
+  }
+
+  .btn-row { justify-content: center; }
+}
+
+// Dark mode ------------------------------------------------------------------
+@media (prefers-color-scheme: dark) {
+  // `:not()` matters here: the home page's header sits on the brand-coloured
+  // hero and styles itself for it. Without this it would be repainted dark
+  // grey over a blue hero, because these rules load after _layout.scss.
+  .site-header:not(.site-header--on-brand) {
+    background: rgba(26, 27, 29, 0.86);
+    border-bottom-color: $rule-dark;
+
+    .site-header__name { color: $ink-dark; }
+    .site-nav a { color: $ink-muted-dark; }
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] { color: $accent-dark-mode; }
+    .nav-toggle { color: $ink-muted-dark; }
+  }
+
+  .section--surface { background: $surface-dark; }
+
+  .feature-card,
+  .callout {
+    background: $surface-dark;
+    box-shadow: none;
+    border: 1px solid $rule-dark;
+  }
+
+  .feature-card p,
+  .feature-row p,
+  .steps li p,
+  .section__lead,
+  .proof li,
+  .faq__answer { color: $ink-muted-dark; }
+
+  .feature-card__icon {
+    background: rgba(135, 191, 224, 0.16);
+    color: $accent-dark-mode;
+  }
+
+  .proof svg { color: $accent-dark-mode; }
+  .eyebrow { color: $accent-dark-mode; }
+
+  .steps li::before { background: $accent-dark-mode; color: $brand-deep; }
+
+  .faq details { border-bottom-color: $rule-dark; }
+  .faq summary { color: $ink-dark; }
+
+  th, td { border-bottom-color: $rule-dark; }
+  thead th, tbody th { color: $ink-muted-dark; }
+  tbody th { color: $ink-dark; }
+
+  .btn--primary { background: $accent-dark-mode; color: $brand-deep; }
+  .btn--primary:hover { background: lighten($accent-dark-mode, 6%); color: $brand-deep; }
+  .btn--ghost { border-color: $rule-dark; color: $ink-dark; }
+  .btn--ghost:hover { border-color: $accent-dark-mode; color: $accent-dark-mode; }
+}

@@ -1,0 +1,14 @@
+{%- comment -%}
+  Renders the same `page.faq` list that schema.html turns into FAQPage markup,
+  so what Google is told and what a reader sees cannot drift apart.
+{%- endcomment -%}
+{%- if page.faq %}
+<div class="faq">
+  {%- for item in page.faq %}
+  <details{% if forloop.first %} open{% endif %}>
+    <summary>{{ item.q }}</summary>
+    <div class="faq__answer">{{ item.a | markdownify }}</div>
+  </details>
+  {%- endfor %}
+</div>
+{%- endif %}

@@ -1,0 +1,66 @@
+// Long-form pages: FAQ, changelog, policies, help.
+// Replaces the vendored github-markdown stylesheet, which brought a whole
+// GitHub theme along to style four documents.
+
+.page-header {
+  padding: $space-64 0 $space-32;
+
+  h1 { margin-bottom: $space-16; }
+
+  .page-header__lead {
+    font-size: 1.14rem;
+    color: $ink-muted;
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  .page-header__meta {
+    font-size: 0.88rem;
+    color: $ink-faint;
+    margin: $space-16 0 0;
+  }
+}
+
+.prose {
+  padding-bottom: $space-96;
+  max-width: $measure;
+
+  > h2 {
+    margin-top: $space-48;
+    padding-top: $space-8;
+  }
+
+  > h3 { margin-top: $space-32; }
+
+  > h2:first-child,
+  > h3:first-child { margin-top: 0; }
+
+  ul, ol { margin-bottom: $space-24; }
+
+  li > p:last-child { margin-bottom: 0; }
+
+  blockquote {
+    margin: $space-24 0;
+    padding: $space-8 0 $space-8 $space-24;
+    border-left: 3px solid $brand;
+    color: $ink-muted;
+
+    p:last-child { margin-bottom: 0; }
+  }
+
+  // A release in the changelog.
+  h2 + p em { color: $ink-faint; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .page-header__lead { color: $ink-muted-dark; }
+  .page-header__meta { color: $ink-muted-dark; }
+
+  .prose blockquote {
+    border-left-color: $accent-dark-mode;
+    color: $ink-muted-dark;
+  }
+}
+
+// Prose that follows a hero rather than a page header.
+.prose--landing { padding-top: $space-48; }

@@ -1,124 +1,109 @@
-#page title
-page_title                                :                                           # Automatically populates with app name if not set and if iOS app ID is set. Otherwise enter manually.
+# ---------------------------------------------------------------------------
+# Site identity
+# ---------------------------------------------------------------------------
+# `url` must stay in sync with CNAME. Canonical tags, the sitemap and every
+# social preview are built from it, so a wrong value here quietly breaks all
+# three at once.
+url                 : "https://www.saucier-app.com"
+baseurl             : ""
 
-# App Info
-ios_app_id                                : 1535998412                                # Required. Enter iOS app ID to automatically populate name, price and icons (e.g. 718043190).
+app_name            : Saucier
+tagline             : Save any recipe. Cook it hands-free.
 
-appstore_link                             :                                           # Automatically populates if not set and if iOS app ID is set. Otherwise enter manually.
-playstore_link                            :                                           # Enter Google Play Store URL.
-# presskit_download_link                    : https://emilbaehr.com                                          # Enter a link to downloadable file or (e.g. public Dropbox link to a .zip file). 
-                                                                                      # Or upload your press kit file to assets and set path accordingly (e.g. "assets/your_press_kit.zip").
+# Shown as the <title> on the home page and as the fallback everywhere else.
+title               : "Saucier — Save Any Recipe, Cook It Hands-Free"
+description         : "Saucier saves recipes from any website, Instagram or TikTok to your iPhone, then reads them back while you cook. Free, private, no account."
 
-# app_icon                                  : # assets/appicon.png                      # Automatically populates if not set and if iOS app ID is set.  Otherwise enter path to icon file manually.
-app_name                                  : Saucier                                           # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
-app_price                                 : Free!                                          # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
-app_description                           : Your easy recipe book!
+# ---------------------------------------------------------------------------
+# App
+# ---------------------------------------------------------------------------
+ios_app_id          : 1535998412
+appstore_link       : "https://apps.apple.com/us/app/saucier/id1535998412"
+app_price           : Free
+app_icon            : /assets/icon/appicon-512.png
+support_email       : help@saucier-app.com
+author              : Brandon Walton
 
-enable_smart_app_banner                   : true                                      # Set to true to show a smart app banner at top of page on mobile devices.
+# Minimum supported OS, quoted in copy and in structured data.
+requires_os         : iOS 26.0 or later
+platforms           : iPhone, iPad
 
+# Default social sharing image. Pages may override with `image:` front matter.
+og_image            : /assets/img/og-default.png
 
+enable_smart_app_banner : true
 
-# Information About Yourself
-your_name                                 : Brandon Walton                             
-# your_link                                 : https://emilbaehr.com                     
-# your_city                                 : Copenhagen                                
-# email_address                             : emil.baehr@gmail.com
-# facebook_username                         :                                           
-# instagram_username                        : ebaehr
-# twitter_username                          : ebaehr
-# github_username                           : emilbaehr
-# youtube_username                          :
+# ---------------------------------------------------------------------------
+# Navigation — order matters, this drives the header and the footer
+# ---------------------------------------------------------------------------
+nav:
+  - title: Features
+    url: /features/
+  - title: Ask Saucier
+    url: /ai-recipe-assistant/
+  - title: Cook Mode
+    url: /hands-free-cooking/
+  - title: Import
+    url: /import-recipes/
+  - title: FAQ
+    url: /FAQ/
 
+footer_nav:
+  - title: Features
+    url: /features/
+  - title: Ask Saucier
+    url: /ai-recipe-assistant/
+  - title: Cook Mode
+    url: /hands-free-cooking/
+  - title: Save from Instagram & TikTok
+    url: /save-recipes-from-instagram-tiktok/
+  - title: Import your recipes
+    url: /import-recipes/
+  - title: Paprika alternative
+    url: /paprika-alternative/
 
+footer_support:
+  - title: Help & Support
+    url: /help/
+  - title: FAQ
+    url: /FAQ/
+  - title: What's New
+    url: /changelog/
+  - title: Privacy Policy
+    url: /privacypolicy/
+  - title: Terms of Service
+    url: /termsofservice/
 
-# Feature List                            Edit, add or remove features to be presented.
-features                                  :
-
-  - title                                 : Simple Design
-    description                           : Tired of searching for that recipe every time? Intuitive layout will have you cooking in no time.
-    fontawesome_icon_name                 : palette
-    
-  - title                                 : Search And Filter
-    description                           : Quickly filter and search your recipes for easy access.
-    fontawesome_icon_name                 : search
-
-  - title                                 : Folders
-    description                           : Organize your recipes into folders
-    fontawesome_icon_name                 : folder
-
-  - title                                 : Save From The Web
-    description                           : Easily save recipes from your favorite websites using he built in app extension.
-    fontawesome_icon_name                 : save
-
-  - title                                 : Add notes
-    description                           : Add recipe notes and reminders for next time!
-    fontawesome_icon_name                 : "sticky-note"
-
-  - title                                 : Edit
-    description                           : Needs a little more salt? Easily edit your saved recipes to match your preferences.
-    fontawesome_icon_name                 : edit
-  
-  - title                                 : Grocery Lists
-    description                           : Easily save your recipe ingredients to your Reminders app grocery list.
-    fontawesome_icon_name                 : "list-ul"
-  
-  - title                                 : Sharing
-    description                           : Share your recipes with friends! Either send them a sauce file or the recipe url
-    fontawesome_icon_name                 : share
-
-  - title                                 : iCloud Sync
-    description                           : Keep all of your recipes backed up and available on all your devices!
-    fontawesome_icon_name                 : cloud
-
-# Theme Settings
-topbar_color                              : "#000000"
-topbar_transparency                       : 0.1
-topbar_title_color                        : "#ffffff"
-
-cover_image                               : assets/headerimage.png                    # Replace with alternative image path or image URL.
-cover_overlay_color                       : "#363b3d"
-cover_overlay_transparency                : 0.8
-
-device_color                              : black                                     # Set to: blue, black, yellow, coral or white.
-
-body_background_color                     : "#ffffff"
-
-link_color                                : "#1d63ea"
-
-app_title_color                           : "#ffffff"
-app_price_color                           : "#ffffff"
-app_description_color                     : "#ffffff"
-
-feature_title_color                       : "#000000"
-feature_text_color                        : "#666666"
-
-feature_icons_foreground_color            : "#1d63ea"
-feature_icons_background_color            : "#e6e6e6"
-
-social_icons_foreground_color             : "#666666"
-social_icons_background_color             : "#e6e6e6"
-
-footer_text_color                         : "#666666"
-
-
-####################################################
-### Jekyll Configuration. No need to touch this. ###
-####################################################
-
-# Set the Sass partials directory, as we're using @imports
+# ---------------------------------------------------------------------------
+# Jekyll
+# ---------------------------------------------------------------------------
 sass:
-  style: :compressed # You might prefer to minify using :compressed
+  style: compressed
 
-# Exclude these files from your production _site
-exclude:
-  - LICENSE
-  - README.md
-  - CNAME
+plugins:
+  - jekyll-sitemap
 
 collections:
   pages:
     output: true
     permalink: /:path/
 
-# Markdown rendering
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - LICENSE
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+# Pages that exist for machines or humans but should not be advertised in the
+# sitemap as content worth ranking.
+defaults:
+  - scope:
+      path: "404.html"
+    values:
+      sitemap: false

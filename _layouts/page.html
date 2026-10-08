@@ -1,22 +1,22 @@
 ---
-# Front matter comment to ensure Jekyll properly reads file.
+layout: default
 ---
 
-<!DOCTYPE html>
-<html lang="en-us">
+<div class="container container--narrow">
+  <header class="page-header">
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {%- if page.lead %}
+    <p class="page-header__lead">{{ page.lead }}</p>
+    {%- endif %}
+    {%- if page.updated %}
+    <p class="page-header__meta">Last updated {{ page.updated }}</p>
+    {%- endif %}
+  </header>
 
-{% include head.html %}
+  <article class="prose">
+    {{ content }}
+    {% include faq.html %}
+  </article>
+</div>
 
-<body class="subPageBody">
-    <div class="headerBackground subPageHeaderBackground">
-        <div class="container subPageContainer">
-        {% include header.html %}
-            <article class="page markdown-body">
-                {{ content }}
-            </article>
-        </div>
-        {% include appstoreimages.html %}
-    </div>
-</body>
-
-</html>
+{% include cta.html %}

@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+{%- comment -%}
+  Layout for the keyword landing pages: a brand hero carrying the H1 (with an
+  optional screenshot), the page's own prose, then the shared closing CTA.
+{%- endcomment -%}
+
+<section class="section section--brand section--tight">
+  <div class="container">
+    <div class="{% if page.screenshot %}hero__grid{% else %}container--narrow{% endif %}"
+         {% unless page.screenshot %}style="padding:0"{% endunless %}>
+      <div>
+        {%- if page.eyebrow %}<span class="eyebrow">{{ page.eyebrow }}</span>{% endif %}
+        <h1>{{ page.heading | default: page.title }}</h1>
+        {%- if page.lead %}
+        <p class="section__lead">{{ page.lead }}</p>
+        {%- endif %}
+        <div class="btn-row">{% include appstore-badge.html %}</div>
+      </div>
+
+      {%- if page.screenshot %}
+      <div class="hero__shot">
+        <div class="device device--sm">
+          <img src="{{ page.screenshot | relative_url }}" alt="{{ page.screenshot_alt }}"
+               width="900" height="1955" fetchpriority="high">
+        </div>
+      </div>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+
+<div class="container container--narrow">
+  <article class="prose prose--landing">
+    {{ content }}
+    {%- if page.faq %}
+    <h2>Questions</h2>
+    {% include faq.html %}
+    {%- endif %}
+  </article>
+</div>
+
+{% include cta.html heading=page.cta_heading body=page.cta_body %}

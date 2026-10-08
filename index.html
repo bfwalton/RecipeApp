@@ -1,3 +1,345 @@
 ---
 layout: default
+header_on_brand: true
+howto_name: How to save a recipe to your iPhone with Saucier
+howto:
+  - title: Share the page to Saucier
+    text: >-
+      Open the recipe in Safari, Instagram, TikTok or any other app, tap the
+      share button and choose Save to Saucier. You can also paste a link
+      straight into the app.
+  - title: Let Saucier read it
+    text: >-
+      Saucier pulls out the ingredients, the method, the servings and any
+      nutrition the page publishes, and drops the ads, the life story and the
+      pop-ups.
+  - title: Check it and save
+    text: >-
+      Edit any line, pick a category and save. The recipe syncs to your other
+      devices over iCloud.
+  - title: Cook it
+    text: >-
+      Tap Make It for step-by-step cook mode, with timers that keep running in
+      the background and a screen that stays awake.
+faq:
+  - q: Is Saucier free?
+    a: >-
+      Yes. Saucier is free to download and use, with no subscription, no ads and
+      no account to create. It is a side project rather than a business, and
+      recipes you have already saved will always stay available to you.
+  - q: Which websites does Saucier work with?
+    a: >-
+      Any of them, in practice. Saucier reads the structured recipe data that
+      most food sites publish, and where a page has none — a recipe written as a
+      story in an Instagram caption, say — Apple Intelligence pulls the
+      ingredients and steps out of the prose on your device.
+  - q: Does Saucier need an internet connection to cook?
+    a: >-
+      Only to save a new recipe from the web. Once a recipe is in your library
+      it is stored on your device, so cook mode, timers and your whole library
+      work offline.
+  - q: Does Saucier send my recipes to a server?
+    a: >-
+      No. Your recipes live on your device and sync through your own private
+      iCloud account. There is no Saucier server, no analytics and no ad
+      network. The Ask Saucier assistant runs on your iPhone or iPad, so your
+      questions are not sent anywhere either.
+  - q: Can I move my recipes over from Paprika?
+    a: >-
+      Yes. Export a `.paprikarecipes` file from Paprika and open it in Saucier.
+      Titles, ingredients, directions, notes, source links, photos and
+      categories all come across, and Saucier tells you up front which Paprika
+      fields it has nowhere to put.
+  - q: What do I need to run Saucier?
+    a: >-
+      An iPhone or iPad running iOS 26 or later. The Ask Saucier assistant
+      additionally needs a device with Apple Intelligence turned on; everything
+      else works on any supported device.
 ---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero__grid">
+
+      <div>
+        <h1>Save any recipe.<br>Cook it hands-free.</h1>
+
+        <p class="hero__lead">
+          Saucier is a free recipe app for iPhone and iPad. Save recipes from any
+          website, Instagram or TikTok in two taps — then let an assistant that
+          runs entirely on your device read the steps back while your hands are
+          covered in flour.
+        </p>
+
+        <div class="btn-row">
+          {% include appstore-badge.html %}
+        </div>
+
+        <p class="hero__meta">
+          Free · No account · No ads · No tracking · {{ site.requires_os }}
+        </p>
+      </div>
+
+      <div class="hero__shot">
+        <div class="device">
+          <img src="{{ '/assets/img/screens/hero.png' | relative_url }}"
+               alt="A recipe for roasted tomato and brown butter pasta open in Saucier, showing the photo, cooking time, servings and a grouped ingredient list."
+               width="900" height="1955" fetchpriority="high">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight section--surface">
+  <div class="container">
+    <ul class="proof">
+      <li>{% include icon.html name="lock" %} Nothing leaves your device</li>
+      <li>{% include icon.html name="cloud" %} Syncs over your own iCloud</li>
+      <li>{% include icon.html name="sparkle" %} On-device Apple Intelligence</li>
+      <li>{% include icon.html name="import" %} Imports from Paprika</li>
+      <li>{% include icon.html name="check" %} Free, with no subscription</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="feature-row">
+      <div>
+        <span class="eyebrow">Saving</span>
+        <h2>Save recipes from any website in two taps</h2>
+        <p>
+          Share any page to Saucier from Safari and it keeps the parts you came
+          for — ingredients, method, servings, timings, nutrition — and leaves
+          the ads, the pop-ups and the thousand words about someone's holiday
+          behind.
+        </p>
+        <p>
+          Paste a link instead if you prefer. Saucier spots a recipe URL already
+          on your clipboard and offers to save it before you have typed
+          anything.
+        </p>
+        <p>
+          <a href="{{ '/save-recipes-from-instagram-tiktok/' | relative_url }}">Saving from Instagram and TikTok →</a>
+        </p>
+      </div>
+      <div class="feature-row__media">
+        <div class="device device--sm">
+          <img src="{{ '/assets/img/screens/addurl.png' | relative_url }}"
+               alt="Saucier offering to save a recipe link found on the clipboard."
+               width="900" height="1955" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row--flip">
+      <div>
+        <span class="eyebrow">Ask Saucier</span>
+        <h2>An AI cooking assistant that runs on your iPhone</h2>
+        <p>
+          Ask Saucier what you can make with what is in the fridge, how much
+          butter the recipe wanted, what to use instead of buttermilk, or what
+          200&nbsp;g is in cups. It answers from your own library and from the
+          recipe in front of you — not from the open web.
+        </p>
+        <p>
+          Turn Voice on and it listens, answers out loud and moves the recipe on
+          a step, so nothing needs touching between putting a pan down and
+          picking it up again. It is built on Apple Intelligence and runs on
+          your device, which is why it works on a plane and why your questions
+          never reach a server.
+        </p>
+        <p>
+          <a href="{{ '/ai-recipe-assistant/' | relative_url }}">How Ask Saucier works →</a>
+        </p>
+      </div>
+      <div class="feature-row__media">
+        <div class="device device--sm">
+          <img src="{{ '/assets/img/screens/cards.png' | relative_url }}"
+               alt="The Ask Saucier chat answering &ldquo;What can I make with eggs?&rdquo; with recipe cards, and showing a tickable ingredient list in reply to &ldquo;What do I need for this?&rdquo;"
+               width="900" height="1955" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div>
+        <span class="eyebrow">Cooking</span>
+        <h2>Cook mode, with timers that keep running</h2>
+        <p>
+          Tap Make It and the recipe becomes one step at a time, in type you can
+          read from across the counter, on a screen that will not dim on you
+          mid-fold.
+        </p>
+        <p>
+          Start a timer from a step and it carries on in the background, shows up
+          on your Lock Screen as a Live Activity and tells you when it is done —
+          even if you have left the app to answer a message. Several can run at
+          once, and the On Now list keeps them all in one place.
+        </p>
+        <p>
+          <a href="{{ '/hands-free-cooking/' | relative_url }}">More about cook mode →</a>
+        </p>
+      </div>
+      <div class="feature-row__media">
+        <div class="device device--sm">
+          <img src="{{ '/assets/img/screens/cooking.png' | relative_url }}"
+               alt="Saucier's cook mode showing one step at a time with a running timer and Next and Pause controls."
+               width="900" height="1955" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="container">
+    <span class="eyebrow">Your library</span>
+    <h2>Everything you cook, in one place</h2>
+    <p class="section__lead">
+      A recipe you cannot find again is a recipe you did not save. Saucier is
+      built around getting back to things quickly.
+    </p>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <div class="feature-card__icon">{% include icon.html name="search" %}</div>
+        <h3>Search that finds ingredients</h3>
+        <p>Search by name or by what is in it, so &ldquo;the one with the anchovies&rdquo; is actually findable. Your recipes also show up in Spotlight from the Home Screen.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">{% include icon.html name="folder" %}</div>
+        <h3>Categories and folders</h3>
+        <p>File recipes under weeknights, baking, or whatever matches how you cook, and filter the library down to one of them in a tap.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">{% include icon.html name="cloud" %}</div>
+        <h3>iCloud sync</h3>
+        <p>Save on your iPhone, cook from your iPad. Everything syncs through your own iCloud account, with no Saucier account to make.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">{% include icon.html name="widget" %}</div>
+        <h3>Home Screen widgets</h3>
+        <p>Put what you cooked recently on the Home Screen, so getting back to last Tuesday's dinner takes one tap.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">{% include icon.html name="cart" %}</div>
+        <h3>Straight to the grocery list</h3>
+        <p>Send ingredients to your Reminders grocery list, one line or the whole recipe, and the button tells you it worked.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">{% include icon.html name="pencil" %}</div>
+        <h3>Edit anything</h3>
+        <p>Needs more salt? Change the lines, reorder the steps, swap the photo, add notes for next time. It is your copy.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">{% include icon.html name="scale" %}</div>
+        <h3>Scaling and conversions</h3>
+        <p>Cooking for six instead of four, or working in grams when the recipe is in cups? Ask, and Saucier does the arithmetic.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">{% include icon.html name="share" %}</div>
+        <h3>Share with whoever cooks with you</h3>
+        <p>Share a recipe over iCloud so edits show up for both of you, or send it as a file or a link to anyone else.</p>
+      </div>
+
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn--ghost" href="{{ '/features/' | relative_url }}">See every feature</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="eyebrow">How it works</span>
+    <h2>From a link to dinner</h2>
+    <ol class="steps">
+      {%- for step in page.howto %}
+      <li>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.text }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="container">
+    <div class="feature-row">
+      <div>
+        <span class="eyebrow">Switching</span>
+        <h2>Bring the recipes you already have</h2>
+        <p>
+          Years of saved recipes are the reason most people stay in an app they
+          have stopped liking. Saucier reads Paprika's
+          <code>.paprikarecipes</code> export directly — titles, ingredients,
+          directions, notes, source links, photos and categories.
+        </p>
+        <p>
+          It also tells you, before anything is imported, which Paprika fields
+          it has nowhere to put. Finding out months later that your ratings
+          stayed behind is not a good way to find out.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--ghost" href="{{ '/import-recipes/' | relative_url }}">How importing works</a>
+          <a class="btn btn--ghost" href="{{ '/paprika-alternative/' | relative_url }}">Saucier vs Paprika</a>
+        </div>
+      </div>
+      <div class="feature-row__media">
+        <div class="device device--sm">
+          <img src="{{ '/assets/img/screens/import.png' | relative_url }}"
+               alt="Saucier's import screen reviewing recipes from a Paprika export before adding them."
+               width="900" height="1955" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--brand">
+  <div class="container container--narrow">
+    <span class="eyebrow">Privacy</span>
+    <h2>No account. No ads. No tracking.</h2>
+    <p class="section__lead">
+      Saucier has no server of its own. Your recipes are stored on your device
+      and synced through your private iCloud account, which means nobody at
+      Saucier can read them — there is nowhere for them to look.
+    </p>
+    <p class="section__lead">
+      There is no analytics SDK, no advertising network and no sign-up. The
+      Ask&nbsp;Saucier assistant runs on your iPhone or iPad using Apple
+      Intelligence, so even your questions stay with you.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn--ghost" href="{{ '/privacypolicy/' | relative_url }}">Read the privacy policy</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <h2>Frequently asked questions</h2>
+    {% include faq.html %}
+    <p style="margin-top: 32px;">
+      Still stuck? <a href="{{ '/help/' | relative_url }}">Visit help and support</a>
+      or email <a href="mailto:{{ site.support_email }}">{{ site.support_email }}</a>.
+    </p>
+  </div>
+</section>
+
+{% include cta.html %}

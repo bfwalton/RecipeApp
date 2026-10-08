@@ -1,0 +1,60 @@
+{%- comment -%}
+  Inline SVG icons.
+
+  These replace the Font Awesome CDN stylesheet the old site loaded on every
+  page — ~60KB of render-blocking CSS plus a font file, to draw nine glyphs.
+  Inline paths cost nothing extra and cannot be blocked.
+
+  Usage: {% include icon.html name="timer" %}
+{%- endcomment -%}
+{%- assign n = include.name -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+{%- case n -%}
+{%- when "check" -%}
+  <path d="M20 6 9 17l-5-5"/>
+{%- when "sparkle" -%}
+  <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/>
+  <circle cx="12" cy="12" r="3"/>
+{%- when "mic" -%}
+  <rect x="9" y="2" width="6" height="12" rx="3"/>
+  <path d="M5 11a7 7 0 0 0 14 0M12 18v4"/>
+{%- when "timer" -%}
+  <circle cx="12" cy="13" r="8"/>
+  <path d="M12 9v4l2.5 2.5M9 2h6"/>
+{%- when "lock" -%}
+  <rect x="4" y="10" width="16" height="11" rx="2"/>
+  <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+{%- when "cloud" -%}
+  <path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.2 11.2 3.9 3.9 0 0 0 6.5 19Z"/>
+{%- when "share" -%}
+  <path d="M12 15V3M8 7l4-4 4 4"/>
+  <path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/>
+{%- when "search" -%}
+  <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+{%- when "folder" -%}
+  <path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>
+{%- when "cart" -%}
+  <circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/>
+  <path d="M2 3h3l2.6 11.4A2 2 0 0 0 9.6 16h8.2a2 2 0 0 0 2-1.6L21.5 7H6"/>
+{%- when "widget" -%}
+  <rect x="3" y="3" width="7.5" height="7.5" rx="2"/>
+  <rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/>
+  <rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/>
+  <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/>
+{%- when "import" -%}
+  <path d="M12 3v12M8 11l4 4 4-4"/>
+  <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+{%- when "pencil" -%}
+  <path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16Z"/><path d="m14.5 5.5 4 4"/>
+{%- when "scale" -%}
+  <path d="M12 4v16M6 8h12"/><path d="m4 16 3-7 3 7a3.2 3.2 0 0 1-6 0Z"/>
+  <path d="m14 16 3-7 3 7a3.2 3.2 0 0 1-6 0Z"/>
+{%- when "book" -%}
+  <path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2Z"/><path d="M6 17h13"/>
+{%- when "phone" -%}
+  <rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/>
+{%- else -%}
+  <circle cx="12" cy="12" r="9"/>
+{%- endcase -%}
+</svg>

@@ -1,52 +1,44 @@
-<footer>
-	{% if site.your_name %}
-	<p class="footerText">Made by {% if site.your_link %}<a href="{{ site.your_link }}">{% endif %}{{ site.your_name }}{% if site.your_link %}</a>{% endif %}{% if site.your_city %} in {{ site.your_city }}{% endif %}</p>
-	{% endif %}
-	<div class="footerIcons">
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
 
-		{% if site.facebook_username %}
-			<a href="https://facebook.com/{{ site.facebook_username }}">
-				<span class="fa-stack fa-1x">
-					<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
-					<i class="socialIconTop fab fa-facebook fa-stack-1x"></i>
-				</span>
-			</a>
-		{% endif %}
+      <div>
+        <div class="site-footer__brand">
+          <img src="{{ '/assets/icon/appicon-180.png' | relative_url }}"
+               alt="" width="34" height="34">
+          <span>{{ site.app_name }}</span>
+        </div>
+        <p>{{ site.tagline }}<br>
+           A recipe app for {{ site.platforms }}, made by {{ site.author }}.</p>
+        <p>
+          <a href="mailto:{{ site.support_email }}">{{ site.support_email }}</a>
+        </p>
+      </div>
 
-		{% if site.twitter_username %}
-			<a href="https://twitter.com/{{ site.twitter_username }}">
-				<span class="fa-stack fa-1x">
-					<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
-					<i class="socialIconTop fab fa-twitter fa-stack-1x"></i>
-				</span>
-			</a>
-		{% endif %}
+      <nav aria-labelledby="footer-explore">
+        <h2 id="footer-explore">Explore</h2>
+        <ul>
+          {%- for item in site.footer_nav %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
 
-		{% if site.github_username %}
-			<a href="https://github.com/{{ site.github_username }}">
-				<span class="fa-stack fa-1x">
-					<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
-					<i class="socialIconTop fab fa-github fa-stack-1x"></i>
-				</span>
-			</a>
-		{% endif %}
+      <nav aria-labelledby="footer-support">
+        <h2 id="footer-support">Support</h2>
+        <ul>
+          {%- for item in site.footer_support %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {%- endfor %}
+          <li><a href="{{ site.appstore_link }}">Download on the App Store</a></li>
+        </ul>
+      </nav>
 
-		{% if site.email_address %}
-			<a href="mailto:{{ site.email_address }}">
-				<span class="fa-stack fa-1x">
-					<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
-					<i class="socialIconTop fas fa-envelope fa-stack-1x"></i>
-				</span>
-			</a>
-		{% endif %}
+    </div>
 
-	</div>
-	<div class="footerLinks">
-		{% for page in site.pages %}
-			<a href="{{ page.url | relative_url }}" target="_self">{{ page.title }}</a>
-		{% endfor %}
-		{% if site.presskit_download_link %}
-			<a href="{{ site.presskit_download_link }}">Press Kit</a>
-		{% endif %}
-	</div>
+    <div class="site-footer__colophon">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.author }}. All rights reserved.</p>
+      <p>Apple, iPhone, iPad, iCloud, Siri and Apple Intelligence are trademarks of Apple Inc.</p>
+    </div>
+  </div>
 </footer>

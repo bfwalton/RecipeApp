@@ -1,0 +1,72 @@
+// Design tokens.
+//
+// These mirror SaucierUI's token files so the site and the app cannot drift:
+// `Brand` and `ListBackground` are the literal sRGB values from the package's
+// asset catalog, and the type pairing (serif display, system sans body) is the
+// one `SaucierFont` sets up. Change them here and in the app together.
+
+// Brand ---------------------------------------------------------------------
+$brand:            #1f4a66; // SaucierColor.brand — rgb(0.122, 0.290, 0.400)
+$brand-deep:       #16384e;
+$brand-soft:       #2d6185;
+$accent-dark-mode: #87bfe0; // SaucierColor.accent, dark variant
+
+// Surfaces ------------------------------------------------------------------
+$paper:            #f8f5f0; // ListBackground, light — warm paper
+$paper-dark:       #1a1b1d; // ListBackground, dark
+$surface:          #ffffff;
+$surface-dark:     #242629;
+
+// Ink -----------------------------------------------------------------------
+$ink:              #1c1b19;
+$ink-muted:        #5f5c57;
+$ink-faint:        #8a8681;
+$ink-dark:         #f2efe9;
+$ink-muted-dark:   #a8a39b;
+
+$rule:             rgba(28, 27, 25, 0.12);
+$rule-dark:        rgba(242, 239, 233, 0.16);
+
+// Type ----------------------------------------------------------------------
+// `ui-serif` resolves to New York on Apple platforms, which is the face the
+// app's recipe headings use. Everything else is a fallback, so the site costs
+// no font download at all.
+$font-display: ui-serif, "New York", "Iowan Old Style", Palatino, "Palatino Linotype",
+               Georgia, "Times New Roman", serif;
+$font-body:    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+
+// Spacing — Spacing.swift, extended upward for a page rather than a cell.
+$space-2:   2px;
+$space-4:   4px;
+$space-8:   8px;
+$space-16:  16px;
+$space-24:  24px;
+$space-32:  32px;
+$space-48:  48px;
+$space-64:  64px;
+$space-96:  96px;
+
+// Corners — CornerRadius.swift.
+$radius-compact:  8px;
+$radius-standard: 20px;
+$radius-pill:     999px;
+
+// The app's most recognisable visual trait: three corners rounded, one square.
+@mixin saucier-corners($r: $radius-standard) {
+  border-radius: $r $r $r $space-4;
+}
+
+// Elevation — Elevation.swift.
+$shadow-card: 0 3px 8px rgba(0, 0, 0, 0.08);
+$shadow-tile: 0 0 3px rgba(0, 0, 0, 0.12);
+$shadow-lift: 0 12px 32px rgba(0, 0, 0, 0.14);
+
+// Layout --------------------------------------------------------------------
+$measure:   720px;  // DuoLayout.readableWidth — the app's reading column
+$container: 1120px;
+$gutter:    20px;
+
+$bp-sm: 560px;
+$bp-md: 760px;
+$bp-lg: 1000px;

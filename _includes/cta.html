@@ -1,0 +1,10 @@
+{%- comment -%} Closing call to action. `heading` and `body` are optional. {%- endcomment -%}
+<section class="section section--brand">
+  <div class="container cta">
+    <h2>{{ include.heading | default: "Start with one recipe." }}</h2>
+    <p>{{ include.body | default: "Paste a link to something you would cook this week. Saucier is free, needs no account, and never asks for your email." }}</p>
+    <div class="btn-row">
+      {% include appstore-badge.html %}
+    </div>
+  </div>
+</section>
