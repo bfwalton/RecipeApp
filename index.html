@@ -1,6 +1,5 @@
 ---
 layout: default
-header_on_brand: true
 howto_name: How to save a recipe to your iPhone with Saucier
 howto:
   - title: Share the page to Saucier
@@ -80,11 +79,16 @@ faq:
         </p>
       </div>
 
-      <div class="hero__shot">
-        <div class="device">
+      <div class="hero__art">
+        <figure class="hero__photo">
+          <img src="{{ '/assets/img/food/galette.jpg' | relative_url }}"
+               alt="A tomato galette on parchment, one slice cut, with thyme scattered around the plate."
+               width="1200" height="900" fetchpriority="high">
+        </figure>
+        <div class="hero__device device">
           <img src="{{ '/assets/img/screens/hero.png' | relative_url }}"
                alt="A recipe for roasted tomato and brown butter pasta open in Saucier, showing the photo, cooking time, servings and a grouped ingredient list."
-               width="900" height="1955" fetchpriority="high">
+               width="900" height="1955">
         </div>
       </div>
 
@@ -92,17 +96,16 @@ faq:
   </div>
 </section>
 
-<section class="section section--tight section--surface">
+<div class="band--proof">
   <div class="container">
     <ul class="proof">
       <li>{% include icon.html name="lock" %} Nothing leaves your device</li>
       <li>{% include icon.html name="cloud" %} Syncs over your own iCloud</li>
-      <li>{% include icon.html name="sparkle" %} On-device Apple Intelligence</li>
-      <li>{% include icon.html name="import" %} Imports from Paprika</li>
-      <li>{% include icon.html name="check" %} Free, with no subscription</li>
+      <li>{% include icon.html name="sparkle" %} On-device intelligence</li>
+      <li>{% include icon.html name="check" %} Free, no subscription</li>
     </ul>
   </div>
-</section>
+</div>
 
 <section class="section">
   <div class="container">
@@ -127,7 +130,12 @@ faq:
         </p>
       </div>
       <div class="feature-row__media">
-        <div class="device device--sm">
+        <figure class="feature-row__photo">
+          <img src="{{ '/assets/img/food/panzanella.jpg' | relative_url }}"
+               alt="A bowl of panzanella with torn bread, tomatoes and basil."
+               width="1200" height="900" loading="lazy">
+        </figure>
+        <div class="feature-row__device device">
           <img src="{{ '/assets/img/screens/addurl.png' | relative_url }}"
                alt="Saucier offering to save a recipe link found on the clipboard."
                width="900" height="1955" loading="lazy">
@@ -135,9 +143,31 @@ faq:
       </div>
     </div>
 
+  </div>
+</section>
+
+<section class="band--photo">
+  <div class="band--photo__img">
+    <img src="{{ '/assets/img/food/shakshuka.jpg' | relative_url }}"
+         alt="Shakshuka in a cast-iron pan, with eggs baked into spiced tomatoes and scattered feta."
+         width="1200" height="900" loading="lazy">
+  </div>
+  <div class="container">
+    <span class="eyebrow">Ask Saucier</span>
+    <p class="quote">“What can I make with eggs?”</p>
+    <p class="quote__after">
+      Three of yours use eggs — and Saucier worked that out on your phone,
+      from your own library, without asking anyone on the internet.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
     <div class="feature-row feature-row--flip">
       <div>
-        <span class="eyebrow">Ask Saucier</span>
+        <span class="eyebrow">Intelligence</span>
         <h2>An AI cooking assistant that runs on your iPhone</h2>
         <p>
           Ask Saucier what you can make with what is in the fridge, how much
@@ -156,10 +186,10 @@ faq:
           <a href="{{ '/ai-recipe-assistant/' | relative_url }}">How Ask Saucier works →</a>
         </p>
       </div>
-      <div class="feature-row__media">
-        <div class="device device--sm">
+      <div class="feature-row__media feature-row__media--device">
+        <div class="device">
           <img src="{{ '/assets/img/screens/cards.png' | relative_url }}"
-               alt="The Ask Saucier chat answering &ldquo;What can I make with eggs?&rdquo; with recipe cards, and showing a tickable ingredient list in reply to &ldquo;What do I need for this?&rdquo;"
+               alt="The Ask Saucier chat answering &ldquo;What can I make with eggs?&rdquo; with recipe cards, and a tickable ingredient list in reply to &ldquo;What do I need for this?&rdquo;"
                width="900" height="1955" loading="lazy">
         </div>
       </div>
@@ -185,7 +215,12 @@ faq:
         </p>
       </div>
       <div class="feature-row__media">
-        <div class="device device--sm">
+        <figure class="feature-row__photo">
+          <img src="{{ '/assets/img/food/pasta.jpg' | relative_url }}"
+               alt="Rigatoni with roasted tomatoes, basil and grated cheese in a shallow bowl."
+               width="1200" height="900" loading="lazy">
+        </figure>
+        <div class="feature-row__device device">
           <img src="{{ '/assets/img/screens/cooking.png' | relative_url }}"
                alt="Saucier's cook mode showing one step at a time with a running timer and Next and Pause controls."
                width="900" height="1955" loading="lazy">
@@ -205,54 +240,70 @@ faq:
       built around getting back to things quickly.
     </p>
 
-    <div class="feature-grid">
+    <div class="spec-list">
 
-      <div class="feature-card">
-        <div class="feature-card__icon">{% include icon.html name="search" %}</div>
-        <h3>Search that finds ingredients</h3>
-        <p>Search by name or by what is in it, so &ldquo;the one with the anchovies&rdquo; is actually findable. Your recipes also show up in Spotlight from the Home Screen.</p>
+      <div class="spec">
+        {% include icon.html name="search" %}
+        <div>
+          <h3>Search that finds ingredients</h3>
+          <p>Search by name or by what is in it, so “the one with the anchovies” is actually findable. Your recipes also show up in Spotlight from the Home Screen.</p>
+        </div>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">{% include icon.html name="folder" %}</div>
-        <h3>Categories and folders</h3>
-        <p>File recipes under weeknights, baking, or whatever matches how you cook, and filter the library down to one of them in a tap.</p>
+      <div class="spec">
+        {% include icon.html name="folder" %}
+        <div>
+          <h3>Categories and folders</h3>
+          <p>File recipes under weeknights, baking, or whatever matches how you cook, and filter the library down to one of them in a tap.</p>
+        </div>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">{% include icon.html name="cloud" %}</div>
-        <h3>iCloud sync</h3>
-        <p>Save on your iPhone, cook from your iPad. Everything syncs through your own iCloud account, with no Saucier account to make.</p>
+      <div class="spec">
+        {% include icon.html name="cloud" %}
+        <div>
+          <h3>iCloud sync</h3>
+          <p>Save on your iPhone, cook from your iPad. Everything syncs through your own iCloud account, with no Saucier account to make.</p>
+        </div>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">{% include icon.html name="widget" %}</div>
-        <h3>Home Screen widgets</h3>
-        <p>Put what you cooked recently on the Home Screen, so getting back to last Tuesday's dinner takes one tap.</p>
+      <div class="spec">
+        {% include icon.html name="widget" %}
+        <div>
+          <h3>Home Screen widgets</h3>
+          <p>Put what you cooked recently on the Home Screen, so getting back to last Tuesday's dinner takes one tap.</p>
+        </div>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">{% include icon.html name="cart" %}</div>
-        <h3>Straight to the grocery list</h3>
-        <p>Send ingredients to your Reminders grocery list, one line or the whole recipe, and the button tells you it worked.</p>
+      <div class="spec">
+        {% include icon.html name="cart" %}
+        <div>
+          <h3>Straight to the grocery list</h3>
+          <p>Send ingredients to your Reminders grocery list, one line or the whole recipe, and the button tells you it worked.</p>
+        </div>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">{% include icon.html name="pencil" %}</div>
-        <h3>Edit anything</h3>
-        <p>Needs more salt? Change the lines, reorder the steps, swap the photo, add notes for next time. It is your copy.</p>
+      <div class="spec">
+        {% include icon.html name="pencil" %}
+        <div>
+          <h3>Edit anything</h3>
+          <p>Needs more salt? Change the lines, reorder the steps, swap the photo, add notes for next time. It is your copy.</p>
+        </div>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">{% include icon.html name="scale" %}</div>
-        <h3>Scaling and conversions</h3>
-        <p>Cooking for six instead of four, or working in grams when the recipe is in cups? Ask, and Saucier does the arithmetic.</p>
+      <div class="spec">
+        {% include icon.html name="scale" %}
+        <div>
+          <h3>Scaling and conversions</h3>
+          <p>Cooking for six instead of four, or working in grams when the recipe is in cups? Ask, and Saucier does the arithmetic.</p>
+        </div>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">{% include icon.html name="share" %}</div>
-        <h3>Share with whoever cooks with you</h3>
-        <p>Share a recipe over iCloud so edits show up for both of you, or send it as a file or a link to anyone else.</p>
+      <div class="spec">
+        {% include icon.html name="share" %}
+        <div>
+          <h3>Share with whoever cooks with you</h3>
+          <p>Share a recipe over iCloud so edits show up for both of you, or send it as a file or a link to anyone else.</p>
+        </div>
       </div>
 
     </div>
@@ -264,14 +315,16 @@ faq:
 </section>
 
 <section class="section">
-  <div class="container">
+  <div class="container container--narrow">
     <span class="eyebrow">How it works</span>
     <h2>From a link to dinner</h2>
-    <ol class="steps">
+    <ol class="method">
       {%- for step in page.howto %}
       <li>
-        <h3>{{ step.title }}</h3>
-        <p>{{ step.text }}</p>
+        <div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </div>
       </li>
       {%- endfor %}
     </ol>
@@ -300,8 +353,8 @@ faq:
           <a class="btn btn--ghost" href="{{ '/paprika-alternative/' | relative_url }}">Saucier vs Paprika</a>
         </div>
       </div>
-      <div class="feature-row__media">
-        <div class="device device--sm">
+      <div class="feature-row__media feature-row__media--device">
+        <div class="device">
           <img src="{{ '/assets/img/screens/import.png' | relative_url }}"
                alt="Saucier's import screen reviewing recipes from a Paprika export before adding them."
                width="900" height="1955" loading="lazy">

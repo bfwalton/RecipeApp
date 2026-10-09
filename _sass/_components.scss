@@ -1,4 +1,9 @@
-// Reusable pieces: buttons, hero, device shots, feature rows, FAQ.
+// Components.
+//
+// The organising idea is a cookbook spread rather than a product page: paper is
+// the default surface, hairlines do the structural work instead of drop
+// shadows, food photography is allowed to be large, and the display face is
+// used at sizes that would be excessive anywhere other than a recipe title.
 
 // Buttons --------------------------------------------------------------------
 .btn {
@@ -15,7 +20,7 @@
   border: 1px solid transparent;
   border-radius: $radius-pill;
   cursor: pointer;
-  transition: transform 0.16s ease, background-color 0.16s ease, box-shadow 0.16s ease;
+  transition: transform 0.16s ease, background-color 0.16s ease, border-color 0.16s ease;
 }
 
 .btn:active { transform: scale(0.975); }
@@ -23,7 +28,6 @@
 .btn--primary {
   background: $brand;
   color: #fff;
-  box-shadow: $shadow-card;
 
   &:hover { background: $brand-soft; color: #fff; }
 }
@@ -32,22 +36,23 @@
   background: #fff;
   color: $brand;
 
-  &:hover { background: rgba(255, 255, 255, 0.9); color: $brand; }
+  &:hover { background: rgba(255, 255, 255, 0.88); color: $brand; }
 }
 
 .btn--ghost {
   background: transparent;
-  border-color: $rule;
+  border-color: $rule-strong;
   color: $ink;
 
   &:hover { border-color: $brand; color: $brand; }
 }
 
-.section--brand .btn--ghost {
-  border-color: rgba(255, 255, 255, 0.4);
+.section--brand .btn--ghost,
+.band--photo .btn--ghost {
+  border-color: rgba(255, 255, 255, 0.45);
   color: #fff;
 
-  &:hover { border-color: #fff; background: rgba(255, 255, 255, 0.1); color: #fff; }
+  &:hover { border-color: #fff; background: rgba(255, 255, 255, 0.12); color: #fff; }
 }
 
 .btn-row {
@@ -58,83 +63,150 @@
   margin-top: $space-32;
 }
 
-// Official App Store badge — Apple's artwork, so it keeps its own proportions.
-.appstore-badge img {
-  height: 54px;
-  width: auto;
+.appstore-badge img { height: 52px; width: auto; }
+
+// Labels ---------------------------------------------------------------------
+// A letterspaced small-caps kicker sitting under a hairline, the way a
+// cookbook labels a chapter.
+.eyebrow {
+  display: block;
+  font-family: $font-body;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $brand-soft;
+  padding-top: $space-16;
+  border-top: 1px solid $rule-strong;
+  margin-bottom: $space-24;
+}
+
+.section--brand .eyebrow,
+.band--photo .eyebrow {
+  color: rgba(255, 255, 255, 0.72);
+  border-top-color: rgba(255, 255, 255, 0.38);
 }
 
 // Hero -----------------------------------------------------------------------
 .hero {
-  background: $brand;
-  color: #fff;
-  padding: $space-64 0;
+  background: $paper;
+  padding: $space-64 0 $space-96;
+  overflow: hidden;
+
+  @media (max-width: $bp-md) { padding-bottom: $space-64; }
 }
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: $space-48;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: $space-64;
   align-items: center;
 
   @media (max-width: $bp-lg) {
     grid-template-columns: 1fr;
-    gap: $space-32;
-    text-align: center;
+    gap: $space-48;
   }
 }
 
 .hero h1 {
-  color: #fff;
-  font-size: clamp(2.4rem, 5.6vw, 4rem);
+  font-size: clamp(2.4rem, 4.8vw, 3.9rem);
+  line-height: 1.04;
+  letter-spacing: -0.028em;
   margin-bottom: $space-24;
 }
 
 .hero__lead {
-  font-size: 1.22rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(1.08rem, 1.5vw, 1.25rem);
+  line-height: 1.55;
+  color: $ink-muted;
   max-width: 34em;
-
-  @media (max-width: $bp-lg) { margin-inline: auto; }
-}
-
-.hero .btn-row {
-  @media (max-width: $bp-lg) { justify-content: center; }
 }
 
 .hero__meta {
   margin: $space-24 0 0;
-  font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  color: $ink-faint;
 }
 
-.hero__shot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-// Device shot ----------------------------------------------------------------
-// A plain bezel rather than a photographic frame: it costs nothing to load and
-// cannot date the way a render of a specific handset does.
-.device {
+// The hero composition: a photograph with the app overlapping its lower-left
+// corner, so the two read as one object rather than as two slots in a grid.
+.hero__art {
   position: relative;
-  width: 100%;
-  max-width: 300px;
-  padding: 10px;
-  background: #111316;
-  border-radius: 46px;
-  box-shadow: $shadow-lift, 0 0 0 1px rgba(255, 255, 255, 0.1);
+  padding: 0 0 $space-96 $space-32;
+
+  @media (max-width: $bp-lg) { max-width: 560px; margin-inline: auto; }
+  @media (max-width: $bp-sm) { padding-left: $space-24; }
+}
+
+.hero__photo {
+  margin: 0;
 
   img {
     width: 100%;
-    border-radius: 36px;
-    display: block;
+    aspect-ratio: 4 / 3.2;
+    object-fit: cover;
+    @include saucier-corners($radius-standard * 1.4);
   }
 }
 
-.device--sm { max-width: 240px; }
+.hero__art .hero__device {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 44%;
+  max-width: 196px;
+}
+
+// Photographic band ----------------------------------------------------------
+// A full-bleed photograph carrying a single line of type. Used sparingly — it
+// is the loudest thing on the page.
+.band--photo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 460px;
+  padding: $space-96 0;
+  color: #fff;
+  isolation: isolate;
+
+  h2, p { color: #fff; }
+}
+
+.band--photo__img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  img { width: 100%; height: 100%; object-fit: cover; }
+}
+
+.band--photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(100deg,
+              rgba(14, 24, 32, 0.95) 0%,
+              rgba(14, 24, 32, 0.90) 38%,
+              rgba(14, 24, 32, 0.62) 72%,
+              rgba(14, 24, 32, 0.45) 100%);
+}
+
+.band--photo .quote {
+  font-family: $font-display;
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+  margin: 0 0 $space-24;
+}
+
+.band--photo .quote__after {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.93);
+  max-width: 42ch;
+}
 
 // Feature rows ---------------------------------------------------------------
 .feature-row {
@@ -153,70 +225,166 @@
   }
 }
 
-// Alternate which side the screenshot sits on, without reordering the DOM.
 .feature-row--flip .feature-row__media { order: -1; }
 
 @media (max-width: $bp-md) {
   .feature-row--flip .feature-row__media { order: 0; }
 }
 
-.feature-row__media {
-  display: flex;
-  justify-content: center;
+.feature-row h2 {
+  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+  margin-bottom: $space-24;
 }
-
-.feature-row h2 { margin-bottom: $space-16; }
 
 .feature-row p { color: $ink-muted; }
 
-.section--brand .feature-row p { color: rgba(255, 255, 255, 0.8); }
+.section--brand .feature-row p { color: rgba(255, 255, 255, 0.82); }
 
-// Feature grid ---------------------------------------------------------------
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: $space-24;
-  margin-top: $space-48;
+// The same photo-plus-device pairing as the hero, at section scale.
+.feature-row__media {
+  position: relative;
+  padding-bottom: $space-48;
+
+  @media (max-width: $bp-md) { max-width: 480px; margin-inline: auto; }
 }
 
-.feature-card {
-  background: $surface;
-  padding: $space-24;
-  @include saucier-corners;
-  box-shadow: $shadow-card;
+.feature-row__photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  @include saucier-corners($radius-standard * 1.4);
+}
+
+.feature-row__media .feature-row__device {
+  position: absolute;
+  bottom: 0;
+  right: $space-24;
+  width: 42%;
+  max-width: 190px;
+}
+
+.feature-row--flip .feature-row__media .feature-row__device {
+  right: auto;
+  left: $space-24;
+}
+
+// Device shot ----------------------------------------------------------------
+.device {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  padding: 7px;
+  background: #15171a;
+  border-radius: 40px;
+  box-shadow: 0 18px 40px rgba(40, 28, 16, 0.26), 0 0 0 1px rgba(0, 0, 0, 0.12);
+
+  img {
+    width: 100%;
+    border-radius: 33px;
+    display: block;
+  }
+}
+
+.device--sm { max-width: 250px; }
+
+// Specification list ---------------------------------------------------------
+// Replaces a grid of shadowed cards. Rows divided by hairlines read as an
+// index, which is what this actually is.
+.spec-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 $space-64;
+  margin-top: $space-48;
+  border-top: 1px solid $rule-strong;
+
+  @media (max-width: $bp-md) { grid-template-columns: 1fr; }
+}
+
+.spec {
+  display: flex;
+  gap: $space-16;
+  padding: $space-24 0;
+  border-bottom: 1px solid $rule;
 
   h3 {
-    font-size: 1.15rem;
-    margin-bottom: $space-8;
+    font-size: 1.1rem;
+    margin-bottom: $space-4;
   }
 
   p {
     margin: 0;
     color: $ink-muted;
-    font-size: 0.98rem;
+    font-size: 0.97rem;
+    line-height: 1.5;
+  }
+
+  svg {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    color: $brand-soft;
   }
 }
 
-.feature-card__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  margin-bottom: $space-16;
-  border-radius: $radius-compact;
-  background: rgba(31, 74, 102, 0.1);
-  color: $brand;
-
-  svg { width: 22px; height: 22px; }
+// Method ---------------------------------------------------------------------
+// The "how it works" steps, set like a recipe's method.
+.method {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: $space-48 0 0;
+  border-top: 1px solid $rule-strong;
 }
 
-// Stat / proof strip ---------------------------------------------------------
+.method > li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: $space-24;
+  align-items: baseline;
+  padding: $space-32 0;
+  margin: 0;
+  border-bottom: 1px solid $rule;
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 2.6rem 1fr;
+    gap: $space-16;
+  }
+}
+
+.method > li::before {
+  content: counter(step);
+  font-family: $font-display;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 0.9;
+  color: $rule-strong;
+  font-weight: 600;
+}
+
+.method h3 {
+  font-size: 1.3rem;
+  margin-bottom: $space-8;
+}
+
+.method p {
+  margin: 0;
+  color: $ink-muted;
+  max-width: 54ch;
+}
+
+.section--brand .method { border-top-color: rgba(255, 255, 255, 0.4); }
+.section--brand .method > li { border-bottom-color: rgba(255, 255, 255, 0.18); }
+.section--brand .method > li::before { color: rgba(255, 255, 255, 0.42); }
+.section--brand .method p { color: rgba(255, 255, 255, 0.82); }
+
+// Proof strip ----------------------------------------------------------------
 .proof {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: $space-16 $space-48;
-  padding: $space-24 0;
+  padding: 0;
   list-style: none;
   margin: 0;
 
@@ -225,53 +393,15 @@
     display: flex;
     align-items: center;
     gap: $space-8;
-    font-size: 0.98rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     color: $ink-muted;
   }
 
-  svg { width: 18px; height: 18px; color: $brand; flex: 0 0 auto; }
+  svg { width: 16px; height: 16px; color: $brand-soft; flex: 0 0 auto; }
 }
-
-.section--brand .proof li { color: rgba(255, 255, 255, 0.8); }
-.section--brand .proof svg { color: rgba(255, 255, 255, 0.9); }
-
-// Steps ----------------------------------------------------------------------
-.steps {
-  counter-reset: step;
-  list-style: none;
-  padding: 0;
-  margin: $space-48 0 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: $space-32;
-}
-
-.steps li {
-  counter-increment: step;
-  margin: 0;
-
-  h3 { margin-bottom: $space-8; font-size: 1.15rem; }
-  p { margin: 0; color: $ink-muted; }
-}
-
-.steps li::before {
-  content: counter(step);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  margin-bottom: $space-16;
-  border-radius: $radius-pill;
-  background: $brand;
-  color: #fff;
-  font-family: $font-display;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-.section--brand .steps li::before { background: #fff; color: $brand; }
-.section--brand .steps li p { color: rgba(255, 255, 255, 0.8); }
 
 // Comparison table -----------------------------------------------------------
 .table-wrap {
@@ -289,40 +419,35 @@ table {
 
 th, td {
   text-align: left;
-  padding: $space-16 $space-16;
+  padding: $space-16;
   border-bottom: 1px solid $rule;
   vertical-align: top;
 }
 
 thead th {
   font-family: $font-body;
-  font-size: 0.8rem;
+  font-size: 0.74rem;
   font-weight: 650;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: $ink-muted;
+  border-bottom-color: $rule-strong;
 }
 
-tbody th {
-  font-weight: 550;
-  color: $ink;
-}
+tbody th { font-weight: 550; color: $ink; }
 
 // FAQ ------------------------------------------------------------------------
-.faq { margin-top: $space-48; }
+.faq { margin-top: $space-48; border-top: 1px solid $rule-strong; }
 
-.faq details {
-  border-bottom: 1px solid $rule;
-  padding: $space-8 0;
-}
+.faq details { border-bottom: 1px solid $rule; }
 
 .faq summary {
   cursor: pointer;
   list-style: none;
-  padding: $space-16 $space-32 $space-16 0;
+  padding: $space-24 $space-48 $space-24 0;
   position: relative;
   font-family: $font-display;
-  font-size: 1.12rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: $ink;
 }
@@ -336,8 +461,8 @@ tbody th {
   top: 50%;
   width: 9px;
   height: 9px;
-  border-right: 2px solid $ink-faint;
-  border-bottom: 2px solid $ink-faint;
+  border-right: 1.5px solid $ink-faint;
+  border-bottom: 1.5px solid $ink-faint;
   transform: translateY(-70%) rotate(45deg);
   transition: transform 0.2s ease;
 }
@@ -345,7 +470,7 @@ tbody th {
 .faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
 
 .faq__answer {
-  padding: 0 $space-32 $space-16 0;
+  padding: 0 $space-48 $space-24 0;
   color: $ink-muted;
 
   p:last-child { margin-bottom: 0; }
@@ -353,37 +478,37 @@ tbody th {
 
 // Callout --------------------------------------------------------------------
 .callout {
-  background: $surface;
   padding: $space-32;
+  border: 1px solid $rule-strong;
   @include saucier-corners;
-  box-shadow: $shadow-card;
   margin: $space-32 0;
 
   h3 { margin-bottom: $space-8; }
   p:last-child { margin-bottom: 0; }
 }
 
-// Final call to action -------------------------------------------------------
+// Closing call to action -----------------------------------------------------
 .cta {
   text-align: center;
 
-  h2 { margin-bottom: $space-16; }
+  h2 {
+    font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+    margin-bottom: $space-16;
+  }
 
   p {
-    max-width: 48ch;
+    max-width: 46ch;
     margin-inline: auto;
     font-size: 1.1rem;
   }
 
   .btn-row { justify-content: center; }
+  .eyebrow { display: inline-block; border-top: 0; padding-top: 0; }
 }
 
 // Dark mode ------------------------------------------------------------------
 @media (prefers-color-scheme: dark) {
-  // `:not()` matters here: the home page's header sits on the brand-coloured
-  // hero and styles itself for it. Without this it would be repainted dark
-  // grey over a blue hero, because these rules load after _layout.scss.
-  .site-header:not(.site-header--on-brand) {
+  .site-header {
     background: rgba(26, 27, 29, 0.86);
     border-bottom-color: $rule-dark;
 
@@ -394,41 +519,96 @@ tbody th {
     .nav-toggle { color: $ink-muted-dark; }
   }
 
-  .section--surface { background: $surface-dark; }
+  .hero { background: $paper-dark; }
+  .section--surface { background: $paper-deep-dark; }
 
-  .feature-card,
-  .callout {
-    background: $surface-dark;
-    box-shadow: none;
-    border: 1px solid $rule-dark;
-  }
+  .callout { border-color: $rule-dark; }
 
-  .feature-card p,
   .feature-row p,
-  .steps li p,
+  .method p,
+  .spec p,
   .section__lead,
   .proof li,
-  .faq__answer { color: $ink-muted-dark; }
+  .faq__answer,
+  .hero__lead { color: $ink-muted-dark; }
 
-  .feature-card__icon {
-    background: rgba(135, 191, 224, 0.16);
-    color: $accent-dark-mode;
-  }
+  .hero__meta { color: $ink-muted-dark; }
 
-  .proof svg { color: $accent-dark-mode; }
-  .eyebrow { color: $accent-dark-mode; }
+  .eyebrow { color: $accent-dark-mode; border-top-color: $rule-strong-dark; }
+  .proof svg, .spec svg { color: $accent-dark-mode; }
 
-  .steps li::before { background: $accent-dark-mode; color: $brand-deep; }
+  .spec-list, .method, .faq { border-top-color: $rule-strong-dark; }
+  .spec, .method > li, .faq details { border-bottom-color: $rule-dark; }
+  .method > li::before { color: $rule-strong-dark; }
 
-  .faq details { border-bottom-color: $rule-dark; }
   .faq summary { color: $ink-dark; }
+  .faq summary::after { border-color: $ink-muted-dark; }
 
   th, td { border-bottom-color: $rule-dark; }
-  thead th, tbody th { color: $ink-muted-dark; }
+  thead th { color: $ink-muted-dark; border-bottom-color: $rule-strong-dark; }
   tbody th { color: $ink-dark; }
 
   .btn--primary { background: $accent-dark-mode; color: $brand-deep; }
   .btn--primary:hover { background: lighten($accent-dark-mode, 6%); color: $brand-deep; }
-  .btn--ghost { border-color: $rule-dark; color: $ink-dark; }
+  .btn--ghost { border-color: $rule-strong-dark; color: $ink-dark; }
   .btn--ghost:hover { border-color: $accent-dark-mode; color: $accent-dark-mode; }
+
+  .device { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08); }
+}
+
+// A feature row whose media is the app alone, with no photograph behind it.
+// Used to break the rhythm — three photo-plus-device pairings in a row starts
+// to look like a template.
+.feature-row__media--device {
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+
+  .device { max-width: 275px; }
+}
+
+// The proof strip: a thin ruled band, not a panel.
+.band--proof {
+  padding: $space-24 0;
+  border-top: 1px solid $rule;
+  border-bottom: 1px solid $rule;
+  background: $paper-deep;
+}
+
+@media (prefers-color-scheme: dark) {
+  .band--proof {
+    background: $paper-deep-dark;
+    border-top-color: $rule-dark;
+    border-bottom-color: $rule-dark;
+  }
+}
+
+// The closing CTA is centred, so its scrim has to be even rather than raked.
+.band--photo--cta {
+  text-align: center;
+  min-height: 420px;
+
+  &::after {
+    background: linear-gradient(180deg,
+                rgba(16, 28, 36, 0.86) 0%,
+                rgba(16, 28, 36, 0.78) 100%);
+  }
+
+  p { color: rgba(255, 255, 255, 0.86); }
+}
+
+
+// Landing-page masthead: the hero, without the photographic composition.
+.hero--compact {
+  padding: $space-48 0 $space-64;
+
+  h1 { font-size: clamp(2.2rem, 4vw, 3.3rem); }
+}
+
+.hero__art--device {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+
+  .device { max-width: 258px; }
 }

@@ -14,22 +14,10 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(248, 245, 240, 0.86);
+  background: rgba(248, 245, 240, 0.9);
   backdrop-filter: saturate(1.6) blur(14px);
   -webkit-backdrop-filter: saturate(1.6) blur(14px);
   border-bottom: 1px solid $rule;
-}
-
-// On the dark hero the header sits on brand rather than on paper.
-.site-header--on-brand {
-  background: rgba(31, 74, 102, 0.82);
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-
-  .site-header__name { color: #fff; }
-  .site-nav a { color: rgba(255, 255, 255, 0.84); }
-  .site-nav a:hover,
-  .site-nav a[aria-current="page"] { color: #fff; }
-  .nav-toggle { color: #fff; }
 }
 
 .site-header__inner {
@@ -151,7 +139,13 @@
   @media (max-width: $bp-md) { padding: $space-64 0; }
 }
 
-.section--tight { padding: $space-64 0; }
+.section--tight { padding: $space-48 0; }
+
+.section > .container > h2,
+.section__head h2 {
+  font-size: clamp(2.1rem, 4.2vw, 3.2rem);
+  max-width: 20ch;
+}
 
 .section--brand {
   background: $brand;
@@ -162,28 +156,18 @@
   a { color: #fff; }
 }
 
-.section--surface { background: $surface; }
+// The alternating band. One shade down from paper rather than white — white
+// reads as a different material next to a warm background, not as emphasis.
+.section--surface { background: $paper-deep; }
 
 .section__lead {
-  max-width: 62ch;
-  font-size: 1.12rem;
+  max-width: 58ch;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.55;
   color: $ink-muted;
 }
 
 .section--brand .section__lead { color: rgba(255, 255, 255, 0.8); }
-
-.eyebrow {
-  display: block;
-  font-family: $font-body;
-  font-size: 0.78rem;
-  font-weight: 650;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: $brand-soft;
-  margin-bottom: $space-8;
-}
-
-.section--brand .eyebrow { color: rgba(255, 255, 255, 0.72); }
 
 // Footer ---------------------------------------------------------------------
 .site-footer {

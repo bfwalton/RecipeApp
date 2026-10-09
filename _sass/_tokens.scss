@@ -13,7 +13,9 @@ $accent-dark-mode: #87bfe0; // SaucierColor.accent, dark variant
 
 // Surfaces ------------------------------------------------------------------
 $paper:            #f8f5f0; // ListBackground, light — warm paper
+$paper-deep:       #f0eae0; // One shade down, for alternating bands
 $paper-dark:       #1a1b1d; // ListBackground, dark
+$paper-deep-dark:  #212326;
 $surface:          #ffffff;
 $surface-dark:     #242629;
 
@@ -24,8 +26,12 @@ $ink-faint:        #8a8681;
 $ink-dark:         #f2efe9;
 $ink-muted-dark:   #a8a39b;
 
-$rule:             rgba(28, 27, 25, 0.12);
-$rule-dark:        rgba(242, 239, 233, 0.16);
+// Hairlines do most of the structural work on this site, in place of the
+// drop shadows a card-based layout would use. Warm, so they sit on paper.
+$rule:             rgba(60, 48, 32, 0.16);
+$rule-strong:      rgba(60, 48, 32, 0.32);
+$rule-dark:        rgba(242, 239, 233, 0.18);
+$rule-strong-dark: rgba(242, 239, 233, 0.34);
 
 // Type ----------------------------------------------------------------------
 // `ui-serif` resolves to New York on Apple platforms, which is the face the

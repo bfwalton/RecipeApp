@@ -1,9 +1,8 @@
 {%- comment -%}
-  `on_brand` is passed by the home page, whose hero sits directly underneath a
-  dark header. The menu is a checkbox so this needs no JavaScript.
+  The menu is a checkbox, so this needs no JavaScript.
 {%- endcomment -%}
 
-<header class="site-header{% if include.on_brand %} site-header--on-brand{% endif %}">
+<header class="site-header">
   <div class="container site-header__inner">
 
     <a class="site-header__brand" href="{{ '/' | relative_url }}">
@@ -27,8 +26,7 @@
       </ul>
     </nav>
 
-    <a class="btn {% if include.on_brand %}btn--on-brand{% else %}btn--primary{% endif %} site-header__cta"
-       href="{{ site.appstore_link }}">Get Saucier</a>
+    <a class="btn btn--primary site-header__cta" href="{{ site.appstore_link }}">Get Saucier</a>
 
   </div>
 </header>
