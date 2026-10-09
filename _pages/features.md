@@ -12,7 +12,7 @@ lead: >-
 cta_heading: All of it, for nothing.
 cta_body: >-
   Saucier is free, has no account and shows no ads. Save one recipe and see.
-screenshot: /assets/img/screens/widgets.png
+screenshot: /assets/img/screens/widgets.jpg
 screenshot_alt: "Saucier's Home Screen widgets showing recently cooked recipes in several sizes."
 ---
 

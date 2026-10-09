@@ -66,7 +66,7 @@ faq:
       original web link, and Saucier can save from that. If there is a format
       you need, say so at help@saucier-app.com — it is useful to know what
       people are actually trying to move.
-screenshot: /assets/img/screens/import.png
+screenshot: /assets/img/screens/import.jpg
 screenshot_alt: "Saucier's import screen reviewing recipes from a Paprika export before adding them."
 ---
 

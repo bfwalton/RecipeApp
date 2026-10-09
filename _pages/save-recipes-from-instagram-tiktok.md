@@ -62,7 +62,7 @@ faq:
       Yes. Every line is editable before and after saving, you can reorder
       steps, swap the photo, and reload the recipe from its original website if
       the page has since been corrected.
-screenshot: /assets/img/screens/addurl.png
+screenshot: /assets/img/screens/addurl.jpg
 screenshot_alt: "Saucier offering to save a recipe link it found on the clipboard."
 ---
 

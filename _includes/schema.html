@@ -40,9 +40,9 @@
       "installUrl": {{ site.appstore_link | jsonify }},
       "image": "{{ site.app_icon | absolute_url }}",
       "screenshot": [
-        "{{ '/assets/img/screens/hero.png' | absolute_url }}",
-        "{{ '/assets/img/screens/cards.png' | absolute_url }}",
-        "{{ '/assets/img/screens/cooking.png' | absolute_url }}"
+        "{{ '/assets/img/screens/hero.jpg' | absolute_url }}",
+        "{{ '/assets/img/screens/cards.jpg' | absolute_url }}",
+        "{{ '/assets/img/screens/cooking.jpg' | absolute_url }}"
       ],
       "description": {{ site.description | strip_newlines | strip | jsonify }},
       "author": { "@id": "{{ site.url }}/#person" },

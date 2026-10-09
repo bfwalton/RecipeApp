@@ -38,7 +38,7 @@ faq:
       Close to it. With Voice switched on you can ask for the next step, ask
       what is in the recipe, or start a timer out loud, and Saucier answers out
       loud. See [Ask Saucier](/ai-recipe-assistant/).
-screenshot: /assets/img/screens/cooking.png
+screenshot: /assets/img/screens/cooking.jpg
 screenshot_alt: "Saucier's cook mode showing one step at a time with a running timer and Next and Pause controls."
 ---
 

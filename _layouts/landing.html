@@ -22,10 +22,7 @@ layout: default
 
       {%- if page.screenshot %}
       <div class="hero__art hero__art--device">
-        <div class="device">
-          <img src="{{ page.screenshot | relative_url }}" alt="{{ page.screenshot_alt }}"
-               width="900" height="1955" fetchpriority="high">
-        </div>
+        {% include device.html src=page.screenshot alt=page.screenshot_alt eager=true %}
       </div>
       {%- endif %}
 

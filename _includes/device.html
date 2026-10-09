@@ -1,0 +1,26 @@
+{%- comment -%}
+  An app screenshot in a phone frame.
+
+  Simulator captures contain the status bar but not the Dynamic Island or the
+  home indicator — those are drawn by the system outside the screenshot, so a
+  raw capture has an empty gap where the island belongs. Both are drawn here
+  instead, as elements rather than baked into the images, so they stay crisp
+  and a re-exported screenshot needs no editing.
+
+  The outer element is only a sizing container: it carries the query context
+  the frame and screen measure their corner radii and padding against, so a
+  190px phone is not drawn with the same 40px corners as a 300px one.
+
+  Params: src, alt, class (optional extra class), eager (true for above-fold).
+{%- endcomment -%}
+<div class="device{% if include.class %} {{ include.class }}{% endif %}">
+  <div class="device__body">
+    <div class="device__screen">
+      <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}"
+           width="600" height="1303"
+           {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>
+      <span class="device__island" aria-hidden="true"></span>
+      <span class="device__home" aria-hidden="true"></span>
+    </div>
+  </div>
+</div>

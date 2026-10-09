@@ -269,20 +269,66 @@
 }
 
 // Device shot ----------------------------------------------------------------
+// Geometry comes from a 440 x 956pt iPhone screen. Everything is expressed
+// against the frame's own width in container-query units, so one rule draws a
+// correct phone at 190px and at 300px — a fixed 40px corner radius reads as a
+// different, much rounder device once the frame shrinks.
 .device {
   position: relative;
   width: 100%;
   max-width: 300px;
-  padding: 7px;
+  container-type: inline-size;
+}
+
+.device__body {
   background: #15171a;
+  padding: 7px;
+  padding: 2.4cqw;
   border-radius: 40px;
+  border-radius: 13.6cqw;
   box-shadow: 0 18px 40px rgba(40, 28, 16, 0.26), 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.device__screen {
+  position: relative;
+  overflow: hidden;
+  border-radius: 33px;
+  border-radius: 11.2cqw;
+  // The screenshot's own ratio, so the frame holds its shape before the image
+  // loads and the island has a box to take its percentages from.
+  aspect-ratio: 600 / 1303;
 
   img {
     width: 100%;
-    border-radius: 33px;
+    height: 100%;
+    object-fit: cover;
     display: block;
   }
+}
+
+// 125 x 36.7pt, inset 11pt from the top — centred on the status bar text.
+.device__island {
+  position: absolute;
+  top: 1.4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28.4%;
+  height: 3.84%;
+  background: #000;
+  border-radius: $radius-pill;
+}
+
+// 140 x 5pt, sitting 8pt off the bottom.
+.device__home {
+  position: absolute;
+  bottom: 0.84%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 31.8%;
+  height: 0.42%;
+  min-height: 2px;
+  background: rgba(0, 0, 0, 0.82);
+  border-radius: $radius-pill;
 }
 
 .device--sm { max-width: 250px; }
@@ -553,7 +599,7 @@ tbody th { font-weight: 550; color: $ink; }
   .btn--ghost { border-color: $rule-strong-dark; color: $ink-dark; }
   .btn--ghost:hover { border-color: $accent-dark-mode; color: $accent-dark-mode; }
 
-  .device { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08); }
+  .device__body { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08); }
 }
 
 // A feature row whose media is the app alone, with no photograph behind it.

@@ -47,7 +47,7 @@ faq:
     a: >-
       On your device, synced through your own iCloud account. Saucier runs no
       server of its own, collects no analytics and shows no ads.
-screenshot: /assets/img/screens/library.png
+screenshot: /assets/img/screens/library.jpg
 screenshot_alt: "Saucier's first-run screen: “Every recipe, in one place.”"
 ---
 

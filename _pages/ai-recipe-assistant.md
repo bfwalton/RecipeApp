@@ -43,7 +43,7 @@ faq:
       That is the point of it. Turn Voice on and Saucier listens, answers out
       loud and moves the recipe on a step, so you can go from putting a pan down
       to picking it up again without touching the screen.
-screenshot: /assets/img/screens/cards.png
+screenshot: /assets/img/screens/cards.jpg
 screenshot_alt: "Ask Saucier answering “What can I make with eggs?” with tappable recipe cards and a tickable ingredient list."
 ---
 

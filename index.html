@@ -85,11 +85,9 @@ faq:
                alt="A tomato galette on parchment, one slice cut, with thyme scattered around the plate."
                width="1200" height="900" fetchpriority="high">
         </figure>
-        <div class="hero__device device">
-          <img src="{{ '/assets/img/screens/hero.png' | relative_url }}"
-               alt="A recipe for roasted tomato and brown butter pasta open in Saucier, showing the photo, cooking time, servings and a grouped ingredient list."
-               width="900" height="1955">
-        </div>
+        {% include device.html class="hero__device" eager=true
+           src="/assets/img/screens/hero.jpg"
+           alt="A recipe for roasted tomato and brown butter pasta open in Saucier, showing the photo, cooking time, servings and a grouped ingredient list." %}
       </div>
 
     </div>
@@ -135,11 +133,9 @@ faq:
                alt="A bowl of panzanella with torn bread, tomatoes and basil."
                width="1200" height="900" loading="lazy">
         </figure>
-        <div class="feature-row__device device">
-          <img src="{{ '/assets/img/screens/addurl.png' | relative_url }}"
-               alt="Saucier offering to save a recipe link found on the clipboard."
-               width="900" height="1955" loading="lazy">
-        </div>
+        {% include device.html class="feature-row__device"
+           src="/assets/img/screens/addurl.jpg"
+           alt="Saucier offering to save a recipe link found on the clipboard." %}
       </div>
     </div>
 
@@ -187,11 +183,9 @@ faq:
         </p>
       </div>
       <div class="feature-row__media feature-row__media--device">
-        <div class="device">
-          <img src="{{ '/assets/img/screens/cards.png' | relative_url }}"
-               alt="The Ask Saucier chat answering &ldquo;What can I make with eggs?&rdquo; with recipe cards, and a tickable ingredient list in reply to &ldquo;What do I need for this?&rdquo;"
-               width="900" height="1955" loading="lazy">
-        </div>
+        {% include device.html
+           src="/assets/img/screens/cards.jpg"
+           alt="The Ask Saucier chat answering “What can I make with eggs?” with recipe cards, and a tickable ingredient list in reply to “What do I need for this?”" %}
       </div>
     </div>
 
@@ -220,11 +214,9 @@ faq:
                alt="Rigatoni with roasted tomatoes, basil and grated cheese in a shallow bowl."
                width="1200" height="900" loading="lazy">
         </figure>
-        <div class="feature-row__device device">
-          <img src="{{ '/assets/img/screens/cooking.png' | relative_url }}"
-               alt="Saucier's cook mode showing one step at a time with a running timer and Next and Pause controls."
-               width="900" height="1955" loading="lazy">
-        </div>
+        {% include device.html class="feature-row__device"
+           src="/assets/img/screens/cooking.jpg"
+           alt="Saucier's cook mode showing one step at a time with a running timer and Next and Pause controls." %}
       </div>
     </div>
 
@@ -354,11 +346,9 @@ faq:
         </div>
       </div>
       <div class="feature-row__media feature-row__media--device">
-        <div class="device">
-          <img src="{{ '/assets/img/screens/import.png' | relative_url }}"
-               alt="Saucier's import screen reviewing recipes from a Paprika export before adding them."
-               width="900" height="1955" loading="lazy">
-        </div>
+        {% include device.html
+           src="/assets/img/screens/import.jpg"
+           alt="Saucier's import screen reviewing recipes from a Paprika export before adding them." %}
       </div>
     </div>
   </div>
