@@ -21,10 +21,11 @@
 }
 
 .site-header__inner {
+  position: relative;
   display: flex;
   align-items: center;
   gap: $space-16;
-  min-height: 60px;
+  min-height: 68px;
 }
 
 .site-header__brand {
@@ -61,16 +62,20 @@
 }
 
 .site-nav li { margin: 0; }
+.site-nav__download { display: none; }
 
 .site-nav a {
+  display: inline-block;
   font-size: 0.95rem;
   color: $ink-muted;
   text-decoration: none;
   white-space: nowrap;
+  padding: $space-8 0;
+  border-bottom: 2px solid transparent;
 }
 
 .site-nav a:hover,
-.site-nav a[aria-current="page"] { color: $brand; }
+.site-nav a[aria-current="page"] { color: $brand; border-bottom-color: currentColor; }
 
 .site-header__cta {
   flex: 0 0 auto;
@@ -83,26 +88,46 @@
 .nav-toggle-state { display: none; }
 
 @media (max-width: $bp-lg) {
-  // Reading order on a narrow header: brand · Menu · Get Saucier, with the
-  // menu panel wrapping onto its own row underneath.
+  // The menu panel wraps below the brand and controls on narrow screens.
+  .nav-toggle-state {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .nav-toggle-state:focus-visible + .nav-toggle {
+    outline: 3px solid $brand-soft;
+    outline-offset: 3px;
+  }
+
   .nav-toggle {
     display: block;
     order: 2;
-    background: none;
-    border: 0;
-    padding: $space-8;
+    background: transparent;
+    border: 1px solid $rule;
+    border-radius: $radius-pill;
+    padding: 6px $space-16;
     margin: 0;
     font: inherit;
-    font-size: 0.95rem;
+    font-size: 0.86rem;
+    font-weight: 600;
     color: $ink-muted;
     cursor: pointer;
+  }
+
+  .nav-toggle-state:checked + .nav-toggle {
+    color: $brand;
+    border-color: $brand;
   }
 
   .site-nav {
     order: 4;
     flex-basis: 100%;
     display: none;
-    padding-bottom: $space-16;
+    padding: $space-8 0 $space-16;
+    border-top: 1px solid $rule;
   }
 
   .nav-toggle-state:checked ~ .site-nav { display: block; }
@@ -117,6 +142,7 @@
     display: block;
     padding: $space-8 0;
     font-size: 1.05rem;
+    border-bottom: 0;
   }
 
   .site-header__inner { flex-wrap: wrap; }
@@ -129,15 +155,20 @@
 
 @media (max-width: $bp-sm) {
   .site-header__name { font-size: 1.1rem; }
-  .nav-toggle { padding: $space-8 $space-4; }
+  .site-header__inner { gap: $space-8; }
+  .site-header__cta { display: none; }
+  .site-nav__download { display: list-item; }
+  .site-nav__download a { color: $brand; font-weight: 650; }
 }
 
 // Sections -------------------------------------------------------------------
 .section {
-  padding: $space-96 0;
+  padding: 88px 0;
 
   @media (max-width: $bp-md) { padding: $space-64 0; }
 }
+
+#how-it-works { scroll-margin-top: 68px; }
 
 .section--tight { padding: $space-48 0; }
 

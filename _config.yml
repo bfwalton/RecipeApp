@@ -12,7 +12,7 @@ tagline             : Save any recipe. Cook it hands-free.
 
 # Shown as the <title> on the home page and as the fallback everywhere else.
 title               : "Saucier — Save Any Recipe, Cook It Hands-Free"
-description         : "Saucier saves recipes from any website, Instagram or TikTok to your iPhone, then reads them back while you cook. Free, private, no account."
+description         : "Save recipes from websites and social posts, plan the week and cook hands-free with Saucier for iPhone and iPad. Free, private, no account."
 
 # ---------------------------------------------------------------------------
 # App
@@ -39,6 +39,8 @@ enable_smart_app_banner : true
 nav:
   - title: Features
     url: /features/
+  - title: Meal Planning
+    url: /meal-planning/
   - title: Ask Saucier
     url: /ai-recipe-assistant/
   - title: Cook Mode
@@ -51,6 +53,8 @@ nav:
 footer_nav:
   - title: Features
     url: /features/
+  - title: Meal Planning
+    url: /meal-planning/
   - title: Ask Saucier
     url: /ai-recipe-assistant/
   - title: Cook Mode

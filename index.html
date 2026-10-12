@@ -34,15 +34,16 @@ faq:
       ingredients and steps out of the prose on your device.
   - q: Does Saucier need an internet connection to cook?
     a: >-
-      Only to save a new recipe from the web. Once a recipe is in your library
-      it is stored on your device, so cook mode, timers and your whole library
-      work offline.
+      No. Your saved recipes, meal plan, grocery list, cook mode and timers work
+      offline. Saving a new web recipe or looking up nutrition through the
+      optional USDA source needs a connection.
   - q: Does Saucier send my recipes to a server?
     a: >-
       No. Your recipes live on your device and sync through your own private
       iCloud account. There is no Saucier server, no analytics and no ad
       network. The Ask Saucier assistant runs on your iPhone or iPad, so your
-      questions are not sent anywhere either.
+      questions are not sent anywhere either. If you choose USDA as your
+      nutrition source, ingredient names are sent directly to USDA for lookup.
   - q: Can I move my recipes over from Paprika?
     a: >-
       Yes. Export a `.paprikarecipes` file from Paprika and open it in Saucier.
@@ -51,31 +52,32 @@ faq:
       fields it has nowhere to put.
   - q: What do I need to run Saucier?
     a: >-
-      An iPhone or iPad running iOS 26 or later. The Ask Saucier assistant
-      additionally needs a device with Apple Intelligence turned on; everything
-      else works on any supported device.
+      An iPhone or iPad running iOS 26 or later. Ask Saucier and on-device
+      nutrition estimates need Apple Intelligence. Meal planning and groceries
+      work on any supported device; USDA nutrition lookups need a connection.
 ---
 
 <section class="hero">
   <div class="container">
     <div class="hero__grid">
 
-      <div>
+      <div class="hero__copy">
+        <span class="eyebrow">A calmer way to cook</span>
         <h1>Save any recipe.<br>Cook it hands-free.</h1>
 
         <p class="hero__lead">
-          Saucier is a free recipe app for iPhone and iPad. Save recipes from any
-          website, Instagram or TikTok in two taps — then let an assistant that
-          runs entirely on your device read the steps back while your hands are
-          covered in flour.
+          Keep recipes from websites, Instagram and TikTok in one place. When
+          it is time to cook, follow each step with timers and an assistant
+          that works right on your iPhone or iPad.
         </p>
 
         <div class="btn-row">
           {% include appstore-badge.html %}
+          <a class="hero__text-link" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a>
         </div>
 
         <p class="hero__meta">
-          Free · No account · No ads · No tracking · {{ site.requires_os }}
+          Free to use · No account · {{ site.requires_os }}
         </p>
       </div>
 
@@ -97,7 +99,7 @@ faq:
 <div class="band--proof">
   <div class="container">
     <ul class="proof">
-      <li>{% include icon.html name="lock" %} Nothing leaves your device</li>
+      <li>{% include icon.html name="lock" %} No Saucier server</li>
       <li>{% include icon.html name="cloud" %} Syncs over your own iCloud</li>
       <li>{% include icon.html name="sparkle" %} On-device intelligence</li>
       <li>{% include icon.html name="check" %} Free, no subscription</li>
@@ -135,7 +137,7 @@ faq:
         </figure>
         {% include device.html class="feature-row__device"
            src="/assets/img/screens/addurl.jpg"
-           alt="Saucier offering to save a recipe link found on the clipboard." %}
+           alt="Saucier's Add from a website sheet with a recipe URL ready to save." %}
       </div>
     </div>
 
@@ -216,7 +218,32 @@ faq:
         </figure>
         {% include device.html class="feature-row__device"
            src="/assets/img/screens/cooking.jpg"
-           alt="Saucier's cook mode showing one step at a time with a running timer and Next and Pause controls." %}
+           alt="Saucier's cook mode showing a recipe step, a running timer and the Next control." %}
+      </div>
+    </div>
+
+    <div class="feature-row feature-row--flip">
+      <div>
+        <span class="eyebrow">The week ahead</span>
+        <h2>Plan the week. Make one grocery list.</h2>
+        <p>
+          Put recipes into breakfast, lunch, dinner or snack slots and set how
+          many people each meal will feed. Saucier gathers the ingredients for
+          the whole week, combines matching items and groups them by aisle.
+        </p>
+        <p>
+          Tick things off as you shop, share the list or send what is left to
+          Reminders. Recipe nutrition estimates are available in beta, with a
+          clear count of the ingredients the estimate could use.
+        </p>
+        <p>
+          <a href="{{ '/meal-planning/' | relative_url }}">Explore meal planning →</a>
+        </p>
+      </div>
+      <div class="feature-row__media feature-row__media--device">
+        {% include device.html
+           src="/assets/img/screens/planned.jpg"
+           alt="Saucier's Meal Plan screen showing meals on Sunday, Tuesday and Wednesday, with a grocery-list control at the top." %}
       </div>
     </div>
 
@@ -306,7 +333,7 @@ faq:
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="how-it-works">
   <div class="container container--narrow">
     <span class="eyebrow">How it works</span>
     <h2>From a link to dinner</h2>
@@ -348,7 +375,7 @@ faq:
       <div class="feature-row__media feature-row__media--device">
         {% include device.html
            src="/assets/img/screens/import.jpg"
-           alt="Saucier's import screen reviewing recipes from a Paprika export before adding them." %}
+           alt="Saucier's Import Recipes screen with a Choose Recipe File control." %}
       </div>
     </div>
   </div>

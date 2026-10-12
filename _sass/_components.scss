@@ -90,16 +90,14 @@
 // Hero -----------------------------------------------------------------------
 .hero {
   background: $paper;
-  padding: $space-64 0 $space-96;
+  padding: $space-48 0 $space-64;
   overflow: hidden;
-
-  @media (max-width: $bp-md) { padding-bottom: $space-64; }
 }
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 1.02fr 0.98fr;
-  gap: $space-64;
+  grid-template-columns: 0.94fr 1.06fr;
+  gap: $space-48;
   align-items: center;
 
   @media (max-width: $bp-lg) {
@@ -108,35 +106,50 @@
   }
 }
 
+.hero__copy { padding-bottom: $space-32; }
+
+.hero__copy .eyebrow { max-width: 23ch; }
+
 .hero h1 {
-  font-size: clamp(2.4rem, 4.8vw, 3.9rem);
-  line-height: 1.04;
-  letter-spacing: -0.028em;
+  font-size: clamp(2.7rem, 4.8vw, 3.9rem);
+  line-height: 1.02;
+  letter-spacing: -0.038em;
   margin-bottom: $space-24;
 }
 
 .hero__lead {
-  font-size: clamp(1.08rem, 1.5vw, 1.25rem);
+  font-size: clamp(1.08rem, 1.5vw, 1.2rem);
   line-height: 1.55;
   color: $ink-muted;
-  max-width: 34em;
+  max-width: 33em;
+}
+
+.hero__text-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+
+  span { margin-left: $space-4; }
 }
 
 .hero__meta {
   margin: $space-24 0 0;
-  font-size: 0.86rem;
-  letter-spacing: 0.04em;
+  font-size: 0.82rem;
+  letter-spacing: 0.025em;
   color: $ink-faint;
 }
 
-// The hero composition: a photograph with the app overlapping its lower-left
-// corner, so the two read as one object rather than as two slots in a grid.
+// Give the app the foreground. The dish is the setting, while the screen is
+// large enough to show the recipe itself at desktop and phone widths.
 .hero__art {
   position: relative;
-  padding: 0 0 $space-96 $space-32;
+  min-height: 625px;
+  padding: $space-16 0 0 30%;
 
-  @media (max-width: $bp-lg) { max-width: 560px; margin-inline: auto; }
-  @media (max-width: $bp-sm) { padding-left: $space-24; }
+  @media (max-width: $bp-lg) { width: 100%; max-width: 560px; margin-inline: auto; }
+  @media (max-width: $bp-sm) { min-height: 480px; padding-left: 28%; }
 }
 
 .hero__photo {
@@ -144,7 +157,7 @@
 
   img {
     width: 100%;
-    aspect-ratio: 4 / 3.2;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
     @include saucier-corners($radius-standard * 1.4);
   }
@@ -154,8 +167,10 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 44%;
-  max-width: 196px;
+  width: 51%;
+  max-width: 272px;
+
+  @media (max-width: $bp-sm) { max-width: 220px; }
 }
 
 // Photographic band ----------------------------------------------------------
@@ -232,11 +247,11 @@
 }
 
 .feature-row h2 {
-  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+  font-size: clamp(2rem, 3.4vw, 3.1rem);
   margin-bottom: $space-24;
 }
 
-.feature-row p { color: $ink-muted; }
+.feature-row p { color: $ink-muted; max-width: 58ch; }
 
 .section--brand .feature-row p { color: rgba(255, 255, 255, 0.82); }
 
@@ -296,7 +311,7 @@
   border-radius: 11.2cqw;
   // The screenshot's own ratio, so the frame holds its shape before the image
   // loads and the island has a box to take its percentages from.
-  aspect-ratio: 600 / 1303;
+  aspect-ratio: 900 / 1955;
 
   img {
     width: 100%;
@@ -400,7 +415,7 @@
 }
 
 .method > li::before {
-  content: counter(step);
+  content: "0" counter(step);
   font-family: $font-display;
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 0.9;
@@ -426,27 +441,29 @@
 
 // Proof strip ----------------------------------------------------------------
 .proof {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: $space-16 $space-48;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: $space-16 $space-24;
   padding: 0;
   list-style: none;
   margin: 0;
 
+  @media (max-width: $bp-lg) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
   li {
     margin: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: $space-8;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.075em;
     text-transform: uppercase;
     color: $ink-muted;
+    line-height: 1.35;
   }
 
-  svg { width: 16px; height: 16px; color: $brand-soft; flex: 0 0 auto; }
+  svg { width: 18px; height: 18px; color: $brand-soft; flex: 0 0 auto; }
 }
 
 // Comparison table -----------------------------------------------------------
@@ -562,7 +579,11 @@ tbody th { font-weight: 550; color: $ink; }
     .site-nav a { color: $ink-muted-dark; }
     .site-nav a:hover,
     .site-nav a[aria-current="page"] { color: $accent-dark-mode; }
+    .site-nav__download a { color: $accent-dark-mode; }
     .nav-toggle { color: $ink-muted-dark; }
+    .site-nav { border-top-color: $rule-dark; }
+    .nav-toggle { border-color: $rule-dark; }
+    .nav-toggle-state:checked + .nav-toggle { color: $accent-dark-mode; border-color: $accent-dark-mode; }
   }
 
   .hero { background: $paper-dark; }
@@ -648,7 +669,8 @@ tbody th { font-weight: 550; color: $ink; }
 .hero--compact {
   padding: $space-48 0 $space-64;
 
-  h1 { font-size: clamp(2.2rem, 4vw, 3.3rem); }
+  h1 { font-size: clamp(2.4rem, 4.4vw, 3.6rem); }
+  .hero__art { min-height: auto; }
 }
 
 .hero__art--device {

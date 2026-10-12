@@ -63,7 +63,7 @@ faq:
       steps, swap the photo, and reload the recipe from its original website if
       the page has since been corrected.
 screenshot: /assets/img/screens/addurl.jpg
-screenshot_alt: "Saucier offering to save a recipe link it found on the clipboard."
+screenshot_alt: "Saucier's Add from a website sheet with a recipe link ready to save."
 ---
 
 A recipe you liked at 11pm on a Tuesday is, three weeks later, in one of:

@@ -4,16 +4,16 @@ permalink: /features/
 title: Features
 heading: Everything Saucier does
 eyebrow: Features
-seo_title: "Saucier Features — Saving, AI Assistant and Cook Mode"
-description: "Every feature of Saucier, the free recipe app for iPhone and iPad: save from any website, on-device AI, hands-free cook mode, timers and iCloud sync."
+seo_title: "Saucier Features — Recipes, Meal Plans and Cook Mode"
+description: "Explore Saucier's recipe saving, meal planning, grocery lists, nutrition estimates, on-device assistant and hands-free cook mode for iPhone and iPad."
 lead: >-
-  Saucier does three things: it gets recipes out of the internet, it keeps them
-  somewhere you can find them, and it helps you cook them. Here is all of it.
+  Save a recipe, find it again, give it a place in your week and cook it with
+  your hands full. Here is what Saucier can do.
 cta_heading: All of it, for nothing.
 cta_body: >-
   Saucier is free, has no account and shows no ads. Save one recipe and see.
-screenshot: /assets/img/screens/widgets.jpg
-screenshot_alt: "Saucier's Home Screen widgets showing recently cooked recipes in several sizes."
+screenshot: /assets/img/screens/planned.jpg
+screenshot_alt: "Saucier's Meal Plan screen with recipes planned across several days."
 ---
 
 ## Saving recipes
@@ -49,7 +49,8 @@ screenshot_alt: "Saucier's Home Screen widgets showing recently cooked recipes i
 - **Scaling** — "make it for six" rescales the amounts.
 - **Conversions** — grams to ounces, and a straight answer about the conversions
   that depend on the ingredient.
-- **Nutrition** — whatever the recipe publishes, on request.
+- **Nutrition** — ask about nutrition published with a recipe; a separate beta
+  estimate can calculate approximate calories and macros from its ingredients.
 - **Voice mode** — it listens, answers out loud, and listens again.
 
 [More on Ask Saucier →]({{ '/ai-recipe-assistant/' | relative_url }})
@@ -71,6 +72,21 @@ screenshot_alt: "Saucier's Home Screen widgets showing recently cooked recipes i
   grocery list, with a button that confirms it worked.
 
 [More on cook mode →]({{ '/hands-free-cooking/' | relative_url }})
+
+## Meal planning and groceries
+
+- **Week tab** — put saved recipes into breakfast, lunch, dinner or snack slots.
+- **Servings per meal** — plan for the people eating that day without editing
+  the original recipe.
+- **One grocery list** — gather and scale the ingredients from the week's meals,
+  combine matching items and group them by aisle.
+- **Shop in Saucier** — tick items off, share the list as text, or send unticked
+  items to Reminders.
+- **Nutrition estimates in beta** — approximate calories and macros with
+  ingredient coverage and the source shown alongside the result. Apple
+  Intelligence or your own USDA FoodData Central key can provide estimates.
+
+[More on meal planning →]({{ '/meal-planning/' | relative_url }})
 
 ## Your library
 
@@ -106,6 +122,7 @@ screenshot_alt: "Saucier's Home Screen widgets showing recently cooked recipes i
 
 ## The app itself
 
+- **Recipes, Week and Ask tabs** keep the three main areas one tap away.
 - **iPhone and iPad**, including side-by-side layouts on larger displays.
 - **iPhone Duo** — library and recipe together when open, controls on the side
   bar when closed.
@@ -121,12 +138,12 @@ screenshot_alt: "Saucier's Home Screen widgets showing recently cooked recipes i
 
 Worth saying plainly, so you do not install it and go looking:
 
-- No meal planner or calendar.
 - No pantry tracking.
 - No Mac, Windows, Android or web version — iPhone and iPad only.
-- No built-in grocery list of its own; it sends to Reminders instead.
+- The weekly meal plan stays on the device where you make it; recipes still
+  sync over iCloud.
 - No recipe discovery feed. Saucier keeps the recipes you bring it.
 
-If a meal planner or cross-platform access is central to how you cook, there are
-apps that will serve you better, and
+If cross-platform access or a pantry is central to how you cook, there are apps
+that will serve you better, and
 [this page says so in more detail]({{ '/paprika-alternative/' | relative_url }}).

@@ -80,11 +80,11 @@ them, and that **Time Sensitive** notifications are permitted.
 
 Timers do not survive the app being force-quit from the app switcher.
 
-### Ingredients are not reaching my grocery list
+### Ingredients are not reaching Reminders
 
-Saucier writes to the **Reminders** app, so it needs full Reminders access in
-**Settings → Saucier**. Ingredients go to your grocery list in Reminders rather
-than to a list inside Saucier.
+Sending ingredients to the **Reminders** app needs full Reminders access in
+**Settings → Saucier**. The grocery list made from your weekly meal plan stays
+inside Saucier until you choose to send its unticked items to Reminders.
 
 ### An import did not work
 

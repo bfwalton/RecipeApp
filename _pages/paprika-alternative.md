@@ -34,9 +34,9 @@ faq:
       real reason to stay with it.
   - q: Does Saucier have a meal planner and pantry?
     a: >-
-      Not today. Saucier sends ingredients to your Reminders grocery list, but it
-      has no meal calendar and no pantry tracking. If those are central to how
-      you cook, Paprika does more than Saucier does.
+      Saucier has a weekly meal plan and a grocery list built from it, with an
+      option to send unticked items to Reminders. It has no pantry tracker, and
+      the plan does not sync between devices yet.
   - q: What does Saucier do that Paprika does not?
     a: >-
       An on-device AI assistant you can talk to while cooking, which answers from
@@ -48,7 +48,7 @@ faq:
       On your device, synced through your own iCloud account. Saucier runs no
       server of its own, collects no analytics and shows no ads.
 screenshot: /assets/img/screens/library.jpg
-screenshot_alt: "Saucier's first-run screen: “Every recipe, in one place.”"
+screenshot_alt: "Saucier's recipe library with search and a saved pasta recipe."
 ---
 
 If you are reading this, you probably already have a Paprika library and a
@@ -99,6 +99,15 @@ so you never touch the phone mid-recipe.
 
 [More about cook mode →]({{ '/hands-free-cooking/' | relative_url }})
 
+### You can plan the week and shop from one list
+
+Saucier puts saved recipes into a weekly meal plan, then gathers their
+ingredients into a grocery list grouped by aisle. Tick items off in the app or
+send what remains to Reminders. The plan stays on the device where you made it;
+Paprika syncs meal plans and grocery lists across devices.
+
+[More about meal planning →]({{ '/meal-planning/' | relative_url }})
+
 ### There is no account and no server
 
 Your library lives on your device and syncs through your own iCloud, so there is
@@ -113,11 +122,12 @@ This is the part comparison pages usually leave out.
   Paprika covers platforms Saucier has no answer for at all. If you want your
   recipes on a Windows laptop or an Android phone, stop reading — stay with
   Paprika.
-- **You rely on meal planning.** Saucier has no meal calendar. Paprika does.
+- **Your meal plan must sync across devices.** Saucier's weekly plan is local to
+  one device. Paprika syncs its plans and supports monthly planning and reusable
+  menus too.
 - **You rely on pantry tracking.** Saucier has none.
-- **You want a grocery list inside the app.** Saucier sends ingredients to your
-  Reminders grocery list rather than keeping its own, which is tidy if you
-  already live in Reminders and a downgrade if you do not.
+- **You keep several grocery lists.** Saucier makes one list from the week and
+  can send items to Reminders. Paprika supports multiple lists and custom aisles.
 - **You want a mature, long-supported, commercially funded app.** Paprika has
   been around for years with a company behind it. Saucier is one person's side
   project. That cuts both ways and you should weigh it.
@@ -135,9 +145,9 @@ This is the part comparison pages usually leave out.
 | Lock Screen Live Activity timers | Yes | — |
 | Sync | Your own iCloud | Paprika's sync service |
 | Account required | No | Yes, for sync |
-| Meal planner | — | Yes |
+| Meal planner | Weekly, on this device | Weekly and monthly, synced |
 | Pantry | — | Yes |
-| Grocery list | Sends to Reminders | Built in |
+| Grocery list | Built from the week; can send to Reminders | Built in and synced |
 | Imports Paprika exports | Yes | n/a |
 | Ads or tracking | None | None |
 
@@ -147,9 +157,9 @@ This is the part comparison pages usually leave out.
 ## The short version
 
 If you cook on Apple devices, want the saving and the cooking to be excellent,
-and do not need a meal planner or a pantry, Saucier is likely to suit you — and
+and do not need a synced meal plan or a pantry, Saucier is likely to suit you — and
 it costs nothing to find out, because your Paprika library imports in one file
 and your old app is still sitting there if you change your mind.
 
-If you are cross-platform, or your week runs on a meal calendar, Paprika is the
-better tool and you should keep it.
+If you are cross-platform, keep several grocery lists or need your meal plan on
+every device, Paprika is the more complete tool today.

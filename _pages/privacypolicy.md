@@ -4,11 +4,12 @@ permalink: /privacypolicy/
 title: Privacy Policy
 heading: Privacy policy
 seo_title: "Saucier Privacy Policy — No Accounts, No Tracking"
-description: "Saucier runs no server, collects no analytics and has no accounts. Your recipes stay on your device and sync through your own private iCloud account."
-updated: 8 October 2026
+description: "Saucier has no account, analytics or server. Recipes sync through your iCloud; optional USDA nutrition lookups send ingredient names directly to USDA."
+updated: 10 October 2026
 lead: >-
-  The short version: Saucier has no server, no account and no analytics, so
-  there is no copy of your recipes anywhere for anyone to look at.
+  The short version: Saucier has no server, account or analytics. Your recipes
+  stay on your device and, if enabled, in your own iCloud. Optional USDA
+  nutrition lookups send ingredient names directly to USDA.
 ---
 
 ## 1. Who this covers
@@ -30,7 +31,7 @@ there is nowhere for one to be.
 
 ## 3. Where your recipes live
 
-Your recipes, photos, notes, categories and timers are stored **on your device**.
+Your recipes, photos, notes and categories are stored **on your device**.
 
 If you have iCloud enabled, they also sync through **your own private iCloud
 account**, using Apple's CloudKit. That data is held in your personal iCloud
@@ -42,13 +43,28 @@ exists.
 If you use iCloud sharing to share a recipe with someone, that recipe is
 accessible to the people you share it with, through Apple's sharing mechanism.
 
+Your active cooking timers and weekly meal plan are stored on the device where
+you use them. The meal plan does not currently sync over iCloud.
+
 ## 4. The on-device assistant
 
 Ask Saucier is built on **Apple Intelligence's on-device foundation model**. Your
 questions, your recipes and the answers are processed on your device and are not
 transmitted to Saucier or to any third party.
 
-## 5. Permissions Saucier may ask for
+## 5. Nutrition estimates
+
+The default nutrition source uses Apple Intelligence on your device. Its
+ingredient lookups and estimates do not leave the device.
+
+If you choose **USDA FoodData Central** instead, Saucier sends each ingredient
+name as a search term, along with your FoodData Central API key or the shared
+demo key, directly from your device to USDA. It does not send the full recipe,
+your notes or your Saucier library. USDA will receive the ordinary network
+information associated with that request, such as your IP address. Your chosen
+source and any API key you enter are stored in the app's local settings.
+
+## 6. Permissions Saucier may ask for
 
 Each is optional, requested only when you use the feature it belongs to, and
 refusing it only disables that feature.
@@ -62,17 +78,17 @@ refusing it only disables that feature.
 | **Photos** | To let you choose a photo for a recipe | The image you pick is stored with the recipe on your device. |
 | **Contacts** | To show the photo of a person you have shared a recipe with | Read on your device for display only. Never transmitted. |
 
-## 6. Network requests Saucier makes
+## 7. Network requests Saucier makes
 
-Saucier contacts the internet in only one situation: when you ask it to save or
-reload a recipe from a web address. Your device fetches that page directly from
-the site in question, the way your browser would. That website will see the
-request as it would any other visit.
+Saucier contacts the internet when you save or reload a recipe from a web
+address. Your device fetches that page directly from the site in question,
+which sees the request as it would a browser visit. It also contacts USDA if
+you choose FoodData Central as your nutrition source, as described above.
 
 Saucier does not route these requests through any server of its own, because
 there isn't one.
 
-## 7. This website
+## 8. This website
 
 This site is hosted on **GitHub Pages**. It sets no cookies, runs no analytics
 and embeds no third-party trackers. GitHub may log standard server information
@@ -82,12 +98,12 @@ such as IP addresses as part of serving the site; see
 The App Store download button links to Apple's App Store, which has
 [its own privacy policy](https://www.apple.com/legal/privacy/).
 
-## 8. Children
+## 9. Children
 
 Saucier is not directed at children under 13 and collects no personal
 information from anyone, including children.
 
-## 9. Your rights
+## 10. Your rights
 
 Because Saucier holds no data about you, there is nothing to request, correct or
 delete from us. Your own copies are under your control at all times:
@@ -96,13 +112,13 @@ delete from us. Your own copies are under your control at all times:
 - Delete the app to remove its local data from a device.
 - Manage or delete its iCloud data from **Settings → Apple Account → iCloud**.
 
-## 10. Changes to this policy
+## 11. Changes to this policy
 
 If this policy changes, the date at the top of this page changes with it, and
 the change will be noted in the app's [release notes]({{ '/changelog/' | relative_url }}).
 Any future addition of analytics would be announced there rather than introduced
 quietly.
 
-## 11. Contact
+## 12. Contact
 
 [{{ site.support_email }}](mailto:{{ site.support_email }})

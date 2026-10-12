@@ -18,8 +18,9 @@ faq:
   - q: What do I need to run it?
     a: >-
       An iPhone or iPad running iOS 26 or later. Ask Saucier additionally needs a
-      device with Apple Intelligence available and switched on; everything else
-      works on any supported device.
+      device with Apple Intelligence available and switched on. Meal planning
+      works on any supported device. On-device nutrition estimates need Apple
+      Intelligence; USDA lookups need a connection.
   - q: Is there a Mac, Android or web version?
     a: >-
       No. Saucier is iPhone and iPad only, and there is no plan for other
@@ -50,6 +51,12 @@ faq:
       your recipes stay on your device and it works with no signal. Voice input
       uses iOS speech recognition, which runs on device wherever your device
       supports it.
+  - q: Does nutrition estimation send recipe data to USDA?
+    a: >-
+      Only if you choose USDA FoodData Central as the source. Saucier sends
+      ingredient names for lookup directly from your device to USDA, along with
+      your API key or the shared demo key. The default Apple Intelligence source
+      works on device and does not send those lookups anywhere.
   - q: Can I import from Paprika?
     a: >-
       Yes. Export a `.paprikarecipes` file and open it in Saucier. Ingredients,
@@ -62,12 +69,15 @@ faq:
       time, and share individual recipes as files or links.
   - q: Does it work offline?
     a: >-
-      Yes, apart from saving something new from the web. Your library, cook
-      mode, timers, search and the assistant all work with no connection.
+      Your library, meal plan, grocery list, cook mode, timers and search work
+      offline. The assistant works offline on devices with Apple Intelligence.
+      Saving a new web recipe and looking up nutrition through USDA need a
+      connection.
   - q: Is there a meal planner or a pantry?
     a: >-
-      Not today. Saucier sends ingredients to your Reminders grocery list, but it
-      has no meal calendar and no pantry tracking.
+      There is a weekly meal plan and an in-app grocery list built from it. You
+      can send unticked grocery items to Reminders. There is no pantry tracker,
+      and the meal plan does not sync between devices yet.
   - q: Can I share recipes with the person I cook with?
     a: >-
       Yes, two ways. Share a recipe over iCloud so that edits show up for both of

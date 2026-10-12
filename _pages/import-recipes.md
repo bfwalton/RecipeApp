@@ -67,7 +67,7 @@ faq:
       you need, say so at help@saucier-app.com — it is useful to know what
       people are actually trying to move.
 screenshot: /assets/img/screens/import.jpg
-screenshot_alt: "Saucier's import screen reviewing recipes from a Paprika export before adding them."
+screenshot_alt: "Saucier's Import Recipes screen with a button to choose a recipe file."
 ---
 
 Switching recipe apps is not really about features. It is about the two hundred

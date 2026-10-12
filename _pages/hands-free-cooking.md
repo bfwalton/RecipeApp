@@ -39,7 +39,7 @@ faq:
       what is in the recipe, or start a timer out loud, and Saucier answers out
       loud. See [Ask Saucier](/ai-recipe-assistant/).
 screenshot: /assets/img/screens/cooking.jpg
-screenshot_alt: "Saucier's cook mode showing one step at a time with a running timer and Next and Pause controls."
+screenshot_alt: "Saucier's cook mode showing a recipe step, running timer and Next control."
 ---
 
 Most recipe apps stop caring the moment the recipe is saved. You get a web page
@@ -103,6 +103,9 @@ recipe to your **Reminders grocery list**, and the button changes to confirm it
 landed. It used to look identical whether you had tapped it or not, which meant
 the only way to be sure was to open Reminders — and the usual response to that
 is to tap everything twice.
+
+If you have planned several meals, the [Week tab]({{ '/meal-planning/' | relative_url }})
+also builds one in-app grocery list from all of them.
 
 ## Accessibility is not an afterthought
 

@@ -4,13 +4,23 @@ permalink: /changelog/
 title: What's New
 heading: What's new in Saucier
 seo_title: "Saucier Release Notes — What's New in Each Version"
-description: "Release notes for Saucier on iPhone and iPad. Version 1.5 adds Ask Saucier, the on-device assistant, tappable timers in cook mode and the On Now screen."
+description: "Release notes for Saucier on iPhone and iPad. Version 1.5 adds Ask Saucier, cook mode timers, weekly meal planning, grocery lists and nutrition estimates."
 lead: Release notes, newest first.
 ---
 
 ## Version 1.5
 
-*Ask Saucier, and timers that follow you around.*
+*Ask Saucier, plan the week, and keep cooking timers close.*
+
+**The week ahead**
+
+- Plan breakfast, lunch, dinner and snacks from the recipes you have saved.
+- Set servings for each meal, then turn the whole week into one grocery list
+  grouped by aisle. Tick items off, share the list or send unticked items to
+  Reminders.
+- See approximate calories and macros for a recipe with a new nutrition beta.
+  It shows which ingredients contributed and where the estimate came from.
+- Recipes, Week and Ask Saucier now have their own tabs.
 
 **Ask Saucier**
 

@@ -73,17 +73,21 @@ When you save a recipe, your device requests that page directly from the website
 in question. The content of those pages, and their terms, are nothing to do with
 us.
 
+If you choose USDA FoodData Central for nutrition estimates, your device sends
+ingredient search terms and the selected API key directly to USDA. See the
+[privacy policy]({{ '/privacypolicy/' | relative_url }}) for details.
+
 ## 7. Not cooking or dietary advice
 
 The app displays recipes and nutrition information that it reads from the
-sources you give it, and the assistant generates suggestions such as ingredient
-substitutions. **None of it is professional dietary, nutritional, medical or
-food-safety advice.**
+sources you give it. It can also estimate nutrition from ingredients, and the
+assistant generates suggestions such as ingredient substitutions. **None of it
+is professional dietary, nutritional, medical or food-safety advice.**
 
-Automated extraction and AI-generated suggestions can be wrong. Check quantities,
-cooking times and temperatures, and in particular check anything that matters
-for an allergy, an intolerance or a medical condition against a source you
-trust. Use your own judgement on food safety.
+Automated extraction, nutrition estimates and AI-generated suggestions can be
+wrong. Check quantities, cooking times and temperatures, and in particular
+check anything that matters for an allergy, an intolerance or a medical
+condition against a source you trust. Use your own judgement on food safety.
 
 ## 8. No warranty
 

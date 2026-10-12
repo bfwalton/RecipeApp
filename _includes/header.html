@@ -12,10 +12,10 @@
       <span class="site-header__name">{{ site.app_name }}</span>
     </a>
 
-    <input type="checkbox" id="nav-toggle-state" class="nav-toggle-state">
+    <input type="checkbox" id="nav-toggle-state" class="nav-toggle-state" aria-controls="primary-nav">
     <label for="nav-toggle-state" class="nav-toggle">Menu</label>
 
-    <nav class="site-nav" aria-label="Primary">
+    <nav class="site-nav" id="primary-nav" aria-label="Primary">
       <ul>
         {%- for item in site.nav %}
         <li>
@@ -23,6 +23,7 @@
              {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.title }}</a>
         </li>
         {%- endfor %}
+        <li class="site-nav__download"><a href="{{ site.appstore_link }}">Get Saucier on the App Store</a></li>
       </ul>
     </nav>
 
